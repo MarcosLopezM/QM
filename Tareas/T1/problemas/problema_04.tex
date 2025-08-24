@@ -2,7 +2,7 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
-% \setproblem{3}
+\setproblem{3}
 \begin{problema}[10]
 	Usando la distribución de velocidades de Maxwell, dada por
 
@@ -21,5 +21,128 @@
 	\end{enumerate}
 
 	donde \(K = \tfrac{p^{2}}{2m}\) es la energía cinética.
+
+	\startsolution
+
+	Sabemos que el promedio de una función está dado por
+
+	\begin{equation}
+		\avg{K} = \int_{0}^{\infty} \rho(p)K \odif{p}.
+		\label{eq:avg}
+	\end{equation}
+
+	Para facilitar los cálculos usaremos resultados anteriores, es decir, mediante el
+	cambio de variable, \zcref{eq:varChange}, escribimos la energía cinética
+	\(K\),
+
+	\begin{align}
+		K            & = \dfrac{\tfrac{2m}{\beta}x^{2}}{2m},\nonumber   \\
+		\Aboxedsec{K & = \dfrac{x^{2}}{\beta}.}\label{eq:kineticEnergy}
+	\end{align}
+
+	Sustituimos el resultado anterior y la \zcref{eq:vDistInX} en la
+	\zcref{eq:avg},
+
+	\begin{align*}
+		\avg{K} & = \int_{0}^{\infty} \Biggl[\tfrac{4}{\sqrt{\pi}}\mathrm{e}^{-x^{2}}x^{2}\Biggr]\Biggl[\dfrac{x^{2}}{\beta}\Biggr]\odif{x}, \\
+		        & = \dfrac{4}{\sqrt{\pi}\beta} \int_{0}^{\infty} x^{4}\mathrm{e}^{-x^{2}}\odif{x}.
+	\end{align*}
+
+	Inspeccionando la expresión anterior notamos que se pare mucho al resultado de la
+	\zcref{eq:intNormalDist}, en particular,
+
+	\begin{align}
+		\odv[order=2]{}{a}\Biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-x^{2}}\odif{x}\Biggr)            & =
+		\int_{-\infty}^{\infty}\odv{}{a}\Biggl[\odv{}{a}\biggl(\mathrm{e}^{-x^{2}}\biggr)\Biggr]\odif{x},\nonumber                                                                                    \\
+		                                                                                               & = \int_{-\infty}^{\infty}\odv{}{a}\Biggl[-x^{2}\mathrm{e}^{-ax^{2}}\Biggr]\odif{x},\nonumber \\
+		                                                                                               & = \int_{-\infty}^{\infty}(-x^{2})^{2}\mathrm{e}^{-a^{2}}\odif{x}, \nonumber                  \\
+		\Aboxedsec{\odv[order=2]{}{a}\Biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-x^{2}}\odif{x}\Biggr) & = \int_{-\infty}^{\infty} x^{4}\mathrm{e}^{-x^{2}}\odif{x}.}\label{eq:da2Dist}
+	\end{align}
+
+	Pero sabemos el valor de la integral,
+
+	\begin{align}
+		\odv*[order=2]{\Biggl(\sqrt{\dfrac{\pi}{a}}\Biggr)}{a} & = \odv*[order=2]{\Biggl(\sqrt{\pi}a^{-1/2}\Biggr)}{a}\nonumber,    \\
+		                                                       & = \odv*{\Biggl(-\dfrac{\sqrt{\pi}}{2}a^{-3/2}\Biggr)}{a},\nonumber \\
+		                                                       & = \dfrac{3\sqrt{\pi}}{4}a^{-5/2},\nonumber                         \\
+		\Aboxedsec{\odv*[order=2]{\biggl(\sqrt{\dfrac{\pi}{a}}\biggr)}{a} = \dfrac{3}{4}\sqrt{\dfrac{\pi}{a^{5}}}.}\label{eq:DerivadaExactValue}
+	\end{align}
+
+	Sin embargo, el dominio de la integral que queremos calcular no coincide con el
+	resultado de la \zcref{eq:DerivadaExactValue}, pero se ve que éste
+	es dos veces el de nuestra integral. Por lo tanto, \(\avg{K}\) es
+
+	\begin{align}
+		\avg{K}             & = \dfrac{4}{\sqrt{\pi}\beta} \Biggl[\dfrac{1}{2}\int_{-\infty}^{\infty} x^{4}\mathrm{e}^{-x^{2}}\odif{x}\Biggr],\nonumber \\
+		                    & = \dfrac{4}{\sqrt{\pi}\beta} \Biggl[\dfrac{1}{2}\Bigl(\dfrac{3}{4}\sqrt{\pi}\Bigr)\Biggr],\nonumber                       \\
+		\Aboxedmain{\avg{K} & = \dfrac{3}{2}kT.}\label{eq:avgK}
+	\end{align}
+
+	Para calcular \(\avg{K^{2}}\) primero calculamos el cuadrado de
+	la \zcref{eq:kineticEnergy},
+
+	\begin{equation}
+		K^{2} = \dfrac{x^{4}}{\beta^{2}}.
+		\label{eq:kineticEnergySquared}
+	\end{equation}
+	%
+	Sustituimos el resultado de la \zcref{eq:kineticEnergySquared} en
+	la expresión para el promedio,
+
+	\begin{align}
+		\avg{K^{2}} & = \int_{0}^{\infty} \Biggl[\dfrac{4}{\sqrt{\pi}}\mathrm{e}^{-x^{2}}\Biggr]\Biggl[\dfrac{x^{4}}{\beta^{2}}\Biggr]\odif{x},\nonumber \\
+		\avg{K^{2}} & = \dfrac{4}{\sqrt{\pi}\beta^{2}}\int_{0}^{\infty} x^{6}\mathrm{e}^{-x^{2}}\odif{x}.\label{eq:SqrdKAvg}
+	\end{align}
+
+	Inspeccionando la expresión anterior nos percatamos que el argumento
+	es el resultado de derivar una vez más la \zcref{eq:da2Dist},
+
+	\begin{align*}
+		\odv*[order=3]{\Biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-x^{2}}\odif{x}\Biggr)}{a}             & =
+		\int_{-\infty}^{\infty} \odv*{\Biggl(x^{4}\mathrm{e}^{-x^{2}}\Biggr)}{a}\odif{x},\nonumber                                                                                      \\
+		                                                                                                 & = \int_{-\infty}^{\infty} x^{4}(-x^{2})\mathrm{e}^{-x^{2}}\odif{x},\nonumber \\
+		\Aboxedsec{ \odv*[order=3]{\Biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-x^{2}}\odif{x}\Biggr)}{a} & = - \int_{-\infty}^{\infty} x^{6}\mathrm{e}^{-x^{2}}\odif{a}. }
+	\end{align*}
+
+	Llegamos a la expresión que deseábamos y, nuevamente, conocemos su valor,
+	por lo que
+
+	\begin{align}
+		\odv*[order=3]{\Biggl[\sqrt{\dfrac{\pi}{a}}\Biggr]}{a}             & = \odv*{\Biggl[\dfrac{3}{4}\sqrt{\dfrac{\pi}{a^{5}}}\Biggr]}{a},\nonumber \\
+		                                                                   & = \dfrac{3}{4}\biggl(-\dfrac{5}{2}\biggr)\sqrt{\pi}a^{-7/2},\nonumber     \\
+		\Aboxedsec{ \odv*[order=3]{\Biggl[\sqrt{\dfrac{\pi}{a}}\Biggr]}{a} & = -\dfrac{15}{8}\sqrt{\dfrac{\pi}{a^{7}}}. }\label{eq:ExactValueCubic}
+	\end{align}
+	%
+	Por lo tanto, recordando que el valor en la \zcref{eq:ExactValueCubic} es
+	el doble del valor de la integral que deseamos calcular y considerando el signo
+	resultante de la operación, i.e.
+
+	\begin{align}
+		\avg{K^{2}}             & = \dfrac{4}{\sqrt{\pi}\beta^{2}}\Biggl[-\dfrac{1}{2}\Biggl(-\dfrac{15}{8}\sqrt{\pi}\Biggr)\Biggr],\nonumber \\
+		\Aboxedmain{\avg{K^{2}} & = \dfrac{15}{4}(kT)^{2}.}\label{eq:AvgKSqrd}
+	\end{align}
+
+	Finalmente, recordamos que la expresión para la desviación estándar es:
+
+	\begin{equation}
+		(\Delta K)^{2} = \avg{K^{2}} - \avg{K}^{2}.
+		\label{eq:StdDeviation}
+	\end{equation}
+
+	Sustituyendo \zcref{eq:avgK,eq:AvgKSqrd} en la \zcref{eq:StdDeviation},
+
+	\begin{align*}
+		(\Delta K)^{2} & = \dfrac{15}{4}(kT)^{2} - \biggl(\dfrac{3}{2}kT\biggr)^{2}, \\
+		               & = \dfrac{15}{4}(kT)^{2} - \dfrac{9}{4}(kT)^{2},             \\
+		               & = \biggl(\dfrac{15}{4} - \dfrac{9}{4}\biggr)(kT)^{2},       \\
+		               & = \dfrac{3}{2}(kT)^{2},                                     \\
+		(\Delta K)^{2} & = \sqrt{\dfrac{3}{2}}\sqrt{(kT)^{2}}.
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		\Delta K = \sqrt{\dfrac{3}{2}}kT.
+	\end{empheq}
 \end{problema}
 \end{document}
