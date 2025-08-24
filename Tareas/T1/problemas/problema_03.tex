@@ -6,9 +6,10 @@
 \begin{problema}[10]
 	Usando la distribución de velocidades de Maxwell, dada por
 
-	\begin{equation*}
+	\begin{equation}
 		\rho(p)\odif{p} = \dfrac{4\pi}{(2\pi m k T)^{3/2}}p^{2}\e^{-\beta \tfrac{p^{2}}{2m}}\odif{p},
-	\end{equation*}
+		\label{eq:vDist}
+	\end{equation}
 
 	muestre que el cambio de variable de la forma
 	\(x = p\sqrt{\tfrac{\beta}{2m}}\), la distribución puede
@@ -17,5 +18,41 @@
 	\begin{equation*}
 		\rho(x)\odif{x} = \dfrac{4}{\sqrt{\pi}}x^{2}\e^{-x^{2}}\odif{x}.
 	\end{equation*}
+
+	\startsolution
+
+	Queremos escribir la \zcref{eq:vDist} como una forma que
+	nos es muy familiar, la distribución normal, por lo que usamos el
+	siguiente cambio de variable
+
+	\begin{equation}
+		x = p\sqrt{\dfrac{\beta}{2m}}.
+		\label{eq:varChange}
+	\end{equation}
+
+	Calculamos los elementos necesarios a partir de la \zcref{eq:varChange},
+
+	\begin{align}
+		x^{2}    & = \tfrac{\beta}{2m}p^{2},\label{eq:xSquared}       \\
+		p^{2}    & = \tfrac{2m}{\beta}x^{2},\label{eq:pSquared}       \\
+		\odif{x} & = \sqrt{\tfrac{\beta}{2m}}\odif{p},\label{eq:difx} \\
+		\odif{p} & = \sqrt{\tfrac{2m}{\beta}}\odif{x}.\label{eq:difp}
+	\end{align}
+
+	Sustituimos las \zcref{eq:varChange,eq:xSquared,eq:pSquared,eq:difx,eq:difp} en
+	la \zcref{eq:vDist},
+
+	\begin{align*}
+		\rho(x)\odif{x} & = \dfrac{4\pi}{\bigl(2\pi m kT\bigr)^{3/2}}
+		\exp\biggl[\biggl(-\tfrac{\beta}{2m}\biggr)\biggl(\tfrac{2m}{\beta}x^{2}\biggr)\biggr] \biggl(\tfrac{2m}{\beta}x^{2}\biggr)\biggl(\sqrt{\tfrac{2m}{\beta}}\odif{x}\biggr), \\
+		                & = \dfrac{4\pi}{\bigl(2\pi m kT\bigr)^{3/2}}\mathrm{e}^{-x^{2}}\biggl(\tfrac{2m}{\beta}\biggr)^{3/2}x^{2}\odif{x}.
+	\end{align*}
+
+	Recordemos que \(\beta = \tfrac{1}{kT}\),
+
+	\begin{align}
+		\rho(x)\odif{x}             & = \dfrac{4\pi}{(\pi)^{3/2}(2mkT)^{3/2}}(2mkT)^{3/2}x^{2}\mathrm{e}^{-x^{2}}\odif{x},\nonumber \\
+		\Aboxedmain{\rho(x)\odif{x} & = \dfrac{4}{\sqrt{\pi}}x^{2}\mathrm{e}^{-x^{2}}\odif{x}.}\label{eq:vDistInX}
+	\end{align}
 \end{problema}
 \end{document}
