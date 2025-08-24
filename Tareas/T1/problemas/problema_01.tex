@@ -10,5 +10,146 @@
 	mediante un análisis dimensional, construya las
 	\textbf{unidades de Planck} asociadas a una escala de longitud,
 	una escala de masa, una escala de tiempo y una escala de temperatura.
+
+	\startsolution
+
+	Para construir las unidades de Planck en términos de las constantes
+	fundamentales, recordamos las dimensiones de cada una de estas,
+
+	\begin{align*}
+		[c]          & = [LT^{-1}],            \\
+		[h]          & = [ML^{2}T^{-1}],       \\
+		[G]          & = [L^{3}T^{-2}M^{-1}],  \\
+		[\kappa_{B}] & = [ML^{2}T^{-2}K^{-1}].
+	\end{align*}
+
+	Comencemos construyendo la longitud de Planck, que denotaremos por
+	\(\ell_{P}\), jugando con las constantes de tal forma que la dimensión
+	sea \(L\).
+
+	\begin{align}
+		\dfrac{h}{c}            & = \dfrac{\tfrac{ML^{2}}{T}}{\tfrac{L}{T}},\nonumber \\
+		\Aboxedsec{\dfrac{h}{c} & = ML.}\label{eq:hDividedbyC}
+	\end{align}
+
+	La expresión anterior se acerca demasiado al resultado, excepto por un factor de \(M\),
+	por lo que ahora intentamos "deshacernos" de este multiplicando por \(G\),
+
+	\begin{equation}
+		\biggl[\dfrac{hG}{c}\biggr] = (ML)\dfrac{L^{3}}{T^{2}M} = \dfrac{L^{4}}{T^{2}}.
+		\label{eq:hGDividedbyC}
+	\end{equation}
+
+	Recordamos por la \zcref{eq:hDividedbyC} que al dividir por \(c\)
+	nos deshicimos de las dimensiones de \(L\) y \(T\), por lo que podemos
+	repetir este paso, ahora por \(c^{2}\),
+
+	\begin{equation}
+		\biggl[\dfrac{hG}{c^{3}}\biggr] = \dfrac{L^{4}}{T^{2}}\dfrac{T^{2}}{L^{2}} = L^{2}.
+		\label{eq:hGDividedbyC3}
+	\end{equation}
+
+	Basta sacar la raíz cuadrada de la expresión anterior para obtener \(\ell_{P}\),
+
+	\begin{align*}
+		\Biggl[\sqrt{\dfrac{hG}{c^{3}}}\Biggr] & = \sqrt{L^{2}} = \abs{L} = L, \\
+		\Aboxedmain{[\ell_{P}]                 & = [L]
+		.
+		}
+	\end{align*}
+
+	Para la masa de Planck, \(m_{P}\), nos fijamos que la \zcref{eq:hDividedbyC}
+	tiene dimensiones que nos interesan, ahora intentemos multiplicándolas, i.e.
+
+	\begin{equation}
+		[hc] = \bigl[\tfrac{ML^{2}}{T}\bigr]\bigl[\tfrac{L}{T}\bigr] = \dfrac{ML^{3}}{T^{2}}.
+		\label{eq:hTimesC}
+	\end{equation}
+
+	Entonces, si dividimos la \zcref{eq:hTimesC} por
+	\(G\) tenemos
+
+	\begin{align*}
+		\Bigl[\dfrac{gc}{G}\Bigr] & = \dfrac{[hc]}{[G]} = \dfrac{\biggl[\tfrac{ML^{3}}{T^{2}}\biggr]}{\biggl[\tfrac{L^{3}}{T^{2}M}\biggr]}
+		= \Biggl[\dfrac{M^{2}L^{3}T^{2}}{T^{2}L^{3}}\Biggr],                                                                               \\
+		\Bigl[\dfrac{gc}{G}\Bigr] & = [M^{2}].
+	\end{align*}
+
+	El paso final es análogo al que se hizo para \(\ell_{P}\), por lo tanto,
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		[m_{P}] = \Biggl[\sqrt{\dfrac{hc}{G}}\Biggr] = [M].
+	\end{empheq}
+
+	Si inspeccionamos alguno de los resultados anteriores notamos que
+	ninguno parece tener ``dimensiones extras'' en \(T\),
+	entonces analicemos el siguiente producto
+
+	\begin{equation}
+		[Gh] = \biggl[\tfrac{L^{3}}{T^{2}M}\biggr]\biggl[\tfrac{ML^{2}}{T}\biggr]
+		= \biggl[\tfrac{L^{5}}{T^{3}}\biggr].
+		\label{eq:GTimesH}
+	\end{equation}
+
+	Vemos que este producto tiene únicamente dimensiones de \(L\) y \(T\),
+	por lo que el paso razonable sería dividir por \(c\), en particular
+	\(c^{5}\) por el término \([L^{5}]\),
+
+	\begin{equation*}
+		\Biggl[\dfrac{Gh}{c^{5}}\Biggr] = \dfrac{\biggl[\tfrac{L^{5}}{T^{3}}\biggr]}{\biggl[\tfrac{T^{5}L^{5}}{T^{3}L^{5}}\biggr]}
+		= [T^{2}].
+	\end{equation*}
+
+	Finalmente, el tiempo de Planck, \(t_{P}\), es
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		[t_{P}] = \Biggl[\sqrt{\dfrac{Gh}{c^{5}}}\Biggr] = [T].
+	\end{empheq}
+
+	Para la temperatura de Planck, \(T_{P}\), primero analizamos lo que sucede con
+	\(\bigl[\tfrac{1}{\kappa_{B}}\bigr]\). Sin embargo, notamos que es de mayor
+	utilidad tener la dimensión deseada para la unidad de Planck al cuadrado, por
+	lo que analizamos \(\bigl[\tfrac{1}{{\kappa_{B}}^{2}}\bigr]\),
+
+	\begin{equation}
+		\biggl[\dfrac{1}{{\kappa_{B}}^{2}}\biggr] =
+		\dfrac{1}{\Biggl[\biggl(\tfrac{ML^{2}}{T^{2}K}\biggr)^{2}\Biggr]} =
+		\Biggl[\dfrac{T^{4}K^{2}}{M^{2}L^{4}}\Biggr].
+		\label{eq:OneOverKb2}
+	\end{equation}
+
+	Veamos qué pasa si multiplicamos la \zcref{eq:OneOverKb2} por
+	\zcref{eq:hTimesC},
+
+	\begin{equation*}
+		\Biggl[\dfrac{hc}{{\kappa_{B}}^{2}}\Biggr] =
+		\biggl[\tfrac{T^{4}K^{2}}{M^{2}L^{4}}\biggr] =
+		\biggl[\tfrac{ML^{3}}{T^{2}}\biggr] =
+		\biggl[\tfrac{T^{2}K^{2}}{M}\biggr].
+	\end{equation*}
+
+	Si dividimos por \(G\) nos desharemos de la dimensión, i.e.
+
+	\begin{equation*}
+		\Biggl[\dfrac{hc}{G{\kappa^{B}}^{2}}\Biggr] =
+		\dfrac{\biggl[\tfrac{T^{2}K^{2}}{ML}\biggr]}{\biggl[\tfrac{L^{3}}{T^{2}M}\biggr]} =
+		\biggl[\tfrac{T^{4}MK^{2}}{ML^{4}}\biggr] =
+		\biggl[\tfrac{T^{4}K^{2}}{L^{4}}\biggr].
+	\end{equation*}
+
+	Finalmente podemos multiplicar por \(c^{4}\) pues las dimensiones presentes
+	en la expresión anterior son de la forma \(\bigl[\tfrac{1}{c}\bigr] = \bigl[\tfrac{T}{L}\bigr]\). Entonces,
+
+	\begin{equation*}
+		\Biggl[\dfrac{hc^{5}}{G{\kappa_{B}}^{2}}\Biggr] =
+		\biggl[\tfrac{T^{4}K^{2}}{L^{4}}\biggr]\biggl[\tfrac{L^{4}}{T^{4}}\biggr] =
+		[K^{2}].
+	\end{equation*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box=\mainresult]{equation*}
+		T_{P} = \Biggl[\sqrt{\dfrac{hc^{5}}{G{\kappa_{B}}^{2}}}\Biggr] = [K].
+	\end{empheq}
 \end{problema}
 \end{document}
