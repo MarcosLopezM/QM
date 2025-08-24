@@ -8,5 +8,57 @@
 	\begin{equation*}
 		\int_{-\infty}^{\infty} \e^{-ax^{2}} \odif{x} = \sqrt{\dfrac{\pi}{a}}.
 	\end{equation*}
+
+	\startsolution
+
+	A priori sabemos que la siguiente integral es igual a un número \(I\),
+
+	\begin{equation*}
+		\int_{-\infty}^{\infty} \e^{-x^{2}} \odif{x} = I.
+	\end{equation*}
+
+	Por lo que podemos hacer lo siguiente,
+
+	\begin{equation*}
+		I^{2} = I \cdot I = \biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-ax^{2}}\odif{x}\biggr)\biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-ax^{2}}\odif{x}\biggr).
+	\end{equation*}
+
+	Notemos que \(x\) es un índice mudo, por lo que podemos escribir
+	la expresión anterior como
+
+	\begin{equation*}
+		I^{2} = I \cdot I = \biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-ax^{2}}\odif{x}\biggr)\biggl(\int_{-\infty}^{\infty} \mathrm{e}^{-ay^{2}}\odif{y}\biggr).
+	\end{equation*}
+
+	Por Fubini, la expresión anterior la podemos escribir como
+
+	\begin{equation*}
+		I^{2} = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\odif{x}\odif{y}\;\mathrm{e}^{-a(x^{2} + y^{2})}.
+	\end{equation*}
+
+	Ahora hacemos un cambio a coordenadas polares con \(r^{2} = x^{2} + y^{2}\) y \(\odif{x}\odif{y} = r \odif{r}\odif{\theta}\). Mientras que los límites de integración
+	son \(r\in[0, \infty)\) y \(\theta \in [0, 2\pi)\).
+
+	\begin{equation*}
+		I^{2} = \int_{0}^{n}\odif{r}\int_{0}^{2\pi}r \odif{\theta} \mathrm{e}^{-ar^{2}} =
+		\int_{0}^{\infty}2\pi r \odif{r} \mathrm{e}^{-ar^{2}}.
+	\end{equation*}
+
+	Pero \(\odif{r^{2}} = 2r \odif{r}\),
+
+	\begin{equation*}
+		I^{2} = \int_{0}^{\infty}\pi \odif{r^{2}}\mathrm{e}^{-ar^{2}}.
+	\end{equation*}
+
+	Nuevamente tenemos un índice mudo, \(r^{2}\), y si lo sustituimos por
+	\(z\), ahora queda como algo que conocemos y sabemos calcular,
+
+	\begin{align*}
+		I^{2}         & = \int_{0}^{\infty} \pi \odif{z} \mathrm{e}^{-a z^{2}},              \\
+		              & = \dfrac{-\pi}{a} \biggl.\mathrm{e}^{-z}\biggr\rvert_{0}^{\infty},   \\
+		              & = \dfrac{-\pi}{a} \bigl(\mathrm{e}^{-\infty} - \mathrm{e}^{0}\bigr), \\
+		I^{2}         & = \dfrac{\pi}{a},                                                    \\
+		\Aboxedmain{I & = \sqrt{\dfrac{\pi}{a}}.}
+	\end{align*}
 \end{problema}
 \end{document}
