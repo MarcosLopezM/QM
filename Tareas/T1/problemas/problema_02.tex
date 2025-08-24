@@ -54,11 +54,18 @@
 	\(z\), ahora queda como algo que conocemos y sabemos calcular,
 
 	\begin{align*}
-		I^{2}         & = \int_{0}^{\infty} \pi \odif{z} \mathrm{e}^{-a z^{2}},              \\
-		              & = \dfrac{-\pi}{a} \biggl.\mathrm{e}^{-z}\biggr\rvert_{0}^{\infty},   \\
-		              & = \dfrac{-\pi}{a} \bigl(\mathrm{e}^{-\infty} - \mathrm{e}^{0}\bigr), \\
-		I^{2}         & = \dfrac{\pi}{a},                                                    \\
-		\Aboxedmain{I & = \sqrt{\dfrac{\pi}{a}}.}
+		I^{2} & = \int_{0}^{\infty} \pi \odif{z} \mathrm{e}^{-a z^{2}},              \\
+		      & = \dfrac{-\pi}{a} \biggl.\mathrm{e}^{-z}\biggr\rvert_{0}^{\infty},   \\
+		      & = \dfrac{-\pi}{a} \bigl(\mathrm{e}^{-\infty} - \mathrm{e}^{0}\bigr), \\
+		I^{2} & = \dfrac{\pi}{a},                                                    \\
+		I     & = \sqrt{\dfrac{\pi}{a}}.
 	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box=\mainresult]{equation}
+		\int_{-\infty}^{\infty} \mathrm{e}^{-x^{2}}\odif{x} = \sqrt{\dfrac{\pi}{a}}.
+		\label{eq:intNormalDist}
+	\end{empheq}
 \end{problema}
 \end{document}
