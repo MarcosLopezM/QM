@@ -1,0 +1,14 @@
+name: Build PDF from external workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-build:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      root_file: "main.tex"
+      send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
