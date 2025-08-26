@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "Tareas/**" # only trigger if something inside Tareas changes
+      - "Tareas/**"
 
 jobs:
   detect-and-build:
@@ -17,12 +17,15 @@ jobs:
       - name: Detect changed project
         id: detect
         run: |
-          changed_dirs=$(git diff --name-only ${{ github.sha }}^ ${{ github.sha }} | grep '^Tareas/T[0-9]\+/' | cut -d/ -f1-2 | sort -u)
+          changed_dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^Tareas/T[0-9]\+/' | cut -d/ -f1-2 | sort -u)
+
           if [ -z "$changed_dirs" ]; then
-            echo "No Tareas projects changed."
+            echo "No projects changed."
             exit 0
           fi
+
           project=$(echo "$changed_dirs" | head -n 1)
+          echo "Detected project: $project"
           echo "project=$project" >> $GITHUB_OUTPUT
 
   build:
