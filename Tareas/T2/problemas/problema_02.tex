@@ -1,0 +1,20 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\begin{problema}
+	En clase hemos estado trabajando con paquetes de onda de onda
+	de la forma
+
+	\begin{equation*}
+		\psi(t, x) = \dfrac{1}{(2\pi)^{1/2}}\int_{-\infty}^{\infty}\odif{k}\; \dfrac{b^{1/2}}{\pi^{1/4}}\mathrm{e}^{-\tfrac{1}{2}b^{2}(k - k_{0})^{2}}\mathrm{e}^{-i(kx - \omega t)}
+	\end{equation*}
+
+	donde \(\omega = \tfrac{\hbar}{2m}k^{2}\). De tarea ha quedado demostrar
+	que la integral anterior es
+
+	\begin{equation}
+		\psi(t, t) = \dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{1}{\sqrt{b^{2} + i\tfrac{\hbar t}{m}}}
+		\mathrm{e}^{-\dfrac{x^{2}}{2(b^{2} + i\tfrac{\hbar t}{m})}}\mathrm{e}^{i \Biggl(\dfrac{k_{0}x - \hbar\tfrac{k_{0}^{2}}{2m}}{1 + i \tfrac{\hbar t}{mb^{2}}}\Biggr)}.
+	\end{equation}
+\end{problema}
+\end{document}
