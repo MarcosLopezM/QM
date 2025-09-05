@@ -4,9 +4,104 @@
 \begin{problema}
 	En clase ha quedado de tarea mostrar que
 
-	\begin{equation*}
-		\int_{-\infty}^{\infty} \mathrm{e}^{( -ax^{2} + bx + c )} \odif{x} = \sqrt{\dfrac{\pi}{a}}
+	\begin{equation}
+		\int_{-\infty}^{\infty} \odif{x}\;\mathrm{e}^{( -ax^{2} + bx + c )} = \sqrt{\dfrac{\pi}{a}}
 		\mathrm{e}^{\bigl(\tfrac{b^{2}}{4a} - c\bigr)}.
+		\label{eq:int_res}
+	\end{equation}
+
+	\startsolution
+
+	Nos gustaría escribir la función que estamos integrando de una
+	forma con la que estamos familiarizados, en particular, sabemos
+	el valor de la integral sobre todo el espacio. El primer paso sería
+	completar el cuadrado del argumento de la exponencial.
+
+	\begin{align}
+		ax^{2} + bx + c & = a \biggl(x^{2} + \tfrac{b}{a}x + \tfrac{b^{2}}{4a}\biggr) - \tfrac{b^{2}}{4a} + c ,\nonumber \\
+		ax^{2} + bx + c & = a \biggl(x + \tfrac{b^{2}}{4a}\biggr)^{2} + c - \tfrac{b^{2}}{4a}.
+		\label{eq:complete-square}
+	\end{align}
+
+	Sustituyendo la \zcref{eq:complete-square} en la \zcref{eq:int_res},
+
+	\begin{align}
+		\int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x} \mathrm{e}^{-\Biggl[a \biggl(x + \tfrac{b^{2}}{4a}\biggr)^{2} + c - \tfrac{b^{2}}{4a}\Biggr]} & = \int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x} \mathrm{e}^{-a \biggl(x + \tfrac{b^{2}}{4a}\biggr)^{2}}\mathrm{e}^{\tfrac{b^{2}}{4a} - c},\nonumber \\
+		                                                                                                                                                 & = \mathrm{e}^{\tfrac{b^{2}}{4a} - c}\int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x}\mathrm{e}^{-a \biggl(x + \tfrac{b^{2}}{4a}\biggr)^{2}}.
+		\label{eq:int_square}
+	\end{align}
+
+	A partir del resultado anterior, el procedimiento es análogo a aquel del
+	Problema 2. Fijamos nuestra atención únicamente en la integral de la
+	\zcref{eq:int_square}, i.e.
+
+	\begin{equation*}
+		I = \int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x}\mathrm{e}^{-a \biggl(x + \tfrac{b^{2}}{4a}\biggr)^{2}}.
 	\end{equation*}
+
+	\pagebreak
+	Definimos un cambio de variable adecuado,
+
+	\begin{align*}
+		x^{\prime}        & = x + \dfrac{b}{2a}, \\
+		\odif{x^{\prime}} & = \odif{x}.
+	\end{align*}
+
+	Entonces,
+
+	\begin{equation*}
+		I = \int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x^{\prime}}\mathrm{e}^{-a{x^{\prime}}^{2}}.
+	\end{equation*}
+
+	Nos fijamos en \(I^{2}\),
+
+	\begin{align*}
+		I^{2} & = \Biggl(\int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x^{\prime}}\mathrm{e}^{-a{x^{\prime}}^{2}}\Biggr)\Biggl(\int_{-\infty}^{\infty}\odif[sep-end=\medspace]{y^{\prime}}\mathrm{e}^{-a{y^{\prime}}^{2}}\Biggr), \\
+		      & = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\odif{x^{\prime}}\odif[sep-end=\medspace]{y^{\prime}} \mathrm{e}^{-a({x^{\prime}}^{2} + {y^{\prime}}^{2})}.
+	\end{align*}
+
+	Haciendo un cambio de variable a coordenadas polares con
+	\(r^{2} = {x^{\prime}}^{2} + {y^{\prime}}^{2}\) y
+	\(\odif{x^{\prime}}\odif{y^{\prime}} = r \odif{r}\odif{\theta}\).
+	Mientras que los límites de integración son
+	\( r\in[0,\infty)\) y \(\theta\in[0,2\pi]\).
+
+	\begin{equation*}
+		I^{2} = \int_{0}^{\infty}r\odif[sep-end=\medspace]{r} \int_{0}^{2\pi}\odif[sep-end=\medspace]{\theta} \mathrm{e}^{-ar^{2}} = \int_{0}^{\infty}\pi(2r\odif[sep-end=\medspace]{r}) \mathrm{e}^{-ar^{2}},
+	\end{equation*}
+
+	pero \(\odif{r^{2}} = 2r \odif{r}\),
+
+	\begin{equation*}
+		I^{2} = \pi \int_{0}^{\infty}\odif[sep-end=\medspace]{r^{2}} \mathrm{e}^{-ar^{2}}.
+	\end{equation*}
+
+	\(r^{2}\) es un índice mudo, si lo sustituimos por \(z\), la expresión
+	anterior se convierte en
+
+	\begin{equation*}
+		I^{2} = \pi \int_{0}^{\infty}\odif[sep-end=\medspace]{z} \mathrm{e}^{-az}
+	\end{equation*}
+
+	cuyo valor sabemos que es igual a
+
+	\begin{align}
+		I^{2} & = \dfrac{\pi}{a},\nonumber                   \\
+		I     & = \sqrt{\dfrac{\pi}{a}}.\label{eq:int_value}
+	\end{align}
+
+	Sustituyendo el resultado de la \zcref{eq:int_value} en la
+	\zcref{eq:int_square} tenemos que
+
+	\begin{equation*}
+		\mathrm{e}^{\tfrac{b^{2}}{4a} - c}\unbr{\int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x} \mathrm{e}^{-a \Bigl(x + \tfrac{b}{2a}\Bigr)^{2}}}_{I} = \mathrm{e}^{\tfrac{b^{2}}{4a} - c}\Bigl(\sqrt{\dfrac{\pi}{a}}\Bigr).
+	\end{equation*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\int_{-\infty}^{\infty}\odif[sep-end=\medspace]{x} \mathrm{e}^{-(ax^{2} + bx + c)} =
+		\sqrt{\dfrac{\pi}{a}}\mathrm{e}^{-\tfrac{b^{2}}{4a} - c}.
+	\end{empheq}
 \end{problema}
 \end{document}
