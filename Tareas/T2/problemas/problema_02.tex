@@ -5,16 +5,58 @@
 	En clase hemos estado trabajando con paquetes de onda de onda
 	de la forma
 
-	\begin{equation*}
+	\begin{equation}
 		\psi(t, x) = \dfrac{1}{(2\pi)^{1/2}}\int_{-\infty}^{\infty}\odif{k}\; \dfrac{b^{1/2}}{\pi^{1/4}}\mathrm{e}^{-\tfrac{1}{2}b^{2}(k - k_{0})^{2}}\mathrm{e}^{-i(kx - \omega t)}
-	\end{equation*}
+		\label{eq:wave-packet-1D}
+	\end{equation}
 
 	donde \(\omega = \tfrac{\hbar}{2m}k^{2}\). De tarea ha quedado demostrar
 	que la integral anterior es
 
-	\begin{equation}
+	\begin{equation*}
 		\psi(t, t) = \dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{1}{\sqrt{b^{2} + i\tfrac{\hbar t}{m}}}
 		\mathrm{e}^{-\dfrac{x^{2}}{2(b^{2} + i\tfrac{\hbar t}{m})}}\mathrm{e}^{i \Biggl(\dfrac{k_{0}x - \hbar\tfrac{k_{0}^{2}}{2m}}{1 + i \tfrac{\hbar t}{mb^{2}}}\Biggr)}.
-	\end{equation}
+	\end{equation*}
+
+	\startsolution
+
+	Escribiendo \(\omega = \tfrac{\hbar}{2m}k^{2}\) y desarrollando la
+	\zcref{eq:wave-packet-1D},
+
+	\begin{align*}
+		\psi(t, x) & = \dfrac{1}{(2\pi)^{1/2}}\dfrac{b^{1/2}}{\pi^{1/4}}
+		\int_{-\infty}^{\infty}\odif[sep-end=\medspace]{k} \mathrm{e}^{-\tfrac{1}{2}b^{2}(k^{2} - 2kk_{0} + k_{0}^{2})}\mathrm{e}^{-i \Bigl[kx - \bigl(\tfrac{\hbar}{2m}k^{2}\bigr)t\Bigr]}, \\
+		           & = \dfrac{1}{(2\pi)^{1/2}}\dfrac{b^{1/2}}{\pi^{1/4}}
+		\mathrm{e}^{-\bigl[\tfrac{1}{2}b^{2}k^{2} - i\tfrac{\hbar tk^{2}}{2m} - b^{2}kk_{0} + ikx - \tfrac{1}{2}b^{2}k_{0}^{2}  \bigr]},                                                     \\
+		           & = \dfrac{1}{(2\pi)^{1/2}}\dfrac{b^{1/2}}{\pi^{1/4}} \int_{-\infty}^{\infty}\odif[sep-end=\medspace]{k}
+		\mathrm{e}^{-\bigl[\bigl(\tfrac{1}{2}b^{2} - i\tfrac{\hbar t}{2m}\bigr)k^{2}
+		+ (ix - b^{2}k_{0})k + \tfrac{1}{2}b^{2}k_{0}^{2}\bigr]}.
+	\end{align*}
+
+	Ahora tenemos una integral igual a la de la \zcref{eq:integral_quadratic_polynomial},
+	por lo que
+
+	\begin{equation*}
+		\psi(t, x) = \dfrac{1}{\sqrt{2}\sqrt{\pi}}\dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{\sqrt{\pi}}{\sqrt{\tfrac{1}{2}b^{2} - i\tfrac{\hbar t}{2m}}}
+		\exp\Biggl[\dfrac{(ix - b^{2}k_{0})^{2}}{4 \bigl(\tfrac{1}{2}b^{2} - i\tfrac{\hbar t}{2m}\bigr)} - \tfrac{1}{2}b^{2}k_{0}^{2}\Biggr].
+	\end{equation*}
+
+	Desarrollando el argumento de la exponencial,
+
+	\begin{align*}
+		\dfrac{(ix - b^{2}k_{0})^{2}}{4 \bigl(\tfrac{1}{2}b^{2} - i\tfrac{\hbar t}{2m}\bigr)} - \tfrac{1}{2}b^{2}k_{0}^{2} & = \dfrac{(ix - b^{2}k_{0})^{2} -b^{2}k_{0}^{2}(b^{2} - i\tfrac{\hbar t}{m})}{2(b^{2} - i\tfrac{\hbar t}{m})},                                                    \\
+		                                                                                                                   & = \dfrac{-x^{2} - 2i^{2}k_{0}x + b^{4}k_{0}^{2} - b^{4}k_{0}^{2} + i\tfrac{\hbar t b^{2}k_{0}^{2}}{m}}{2(b^{2} - i\tfrac{\hbar t}{m})},                          \\
+		                                                                                                                   & = \tfrac{-x^{2}}{2(b^{2} - i\tfrac{\hbar t}{m})} + i \Biggl[\dfrac{-2b^{2}(k_{0}x - \tfrac{\hbar t}{2m}k_{0}^{2})}{2b^{2}(1 - i\tfrac{\hbar t}{mb^{2}})}\Biggr], \\
+		                                                                                                                   & = \dfrac{-x^{2}}{2(b^{2} - i\tfrac{\hbar t}{m})} - i \Biggl[\dfrac{k_{0}x - \tfrac{\hbar t}{2m}k_{0}^{2}}{1 - i\tfrac{\hbar t}{mb^{2}}}\Biggr].
+	\end{align*}
+
+	Por lo que \(\psi(t, x)\) queda como
+
+	\begin{empheq}[box = \mainresult]{equation}
+		\psi(t, x) = \dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{1}{\sqrt{b^{2} - i\tfrac{\hbar t}{m}}}
+		\exp\Biggl[-\dfrac{x^{2}}{2(b^{2} - i\tfrac{\hbar t}{m})}\Biggr]
+		\exp\Biggl[\dfrac{k_{0}x - \tfrac{\hbar t}{2m}k_{0}^{2}}{1 - i\tfrac{\hbar t}{mb^{2}}}\Biggr].
+		\label{eq:wave-packet-res}
+	\end{empheq}
 \end{problema}
 \end{document}
