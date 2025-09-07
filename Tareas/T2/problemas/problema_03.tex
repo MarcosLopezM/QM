@@ -10,4 +10,35 @@
 		               & = \dfrac{1}{b\sqrt{\pi}}\dfrac{1}{\sqrt{1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}}}\mathrm{e}^{-\dfrac{\biggl(x - \tfrac{\hbar k_{0}}{m}t\biggr)^{2}}{b^{2}\biggl(1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}\biggr)}}.
 	\end{align*}
 \end{problema}
+
+\startsolution
+
+Calculamos \(\psi^{*}\) de la \zcref{eq:wave-packet-res},
+
+\begin{equation}
+	\psi^{*}(t, x) = \dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{1}{\sqrt{b^{2} + i\tfrac{\hbar t}{m}}}
+	\exp\Biggl[-\dfrac{x^{2}}{2(b^{2} + i\tfrac{\hbar t}{m})}\Biggr]
+	\exp\Biggl\lbrace i\Biggl[\dfrac{k_{0}x - \tfrac{\hbar t}{2m}k_{0}^{2}}{1 + i\tfrac{\hbar t}{mb^{2}}}\Biggr]\Biggr\rbrace.
+	\label{eq:wave-packet-conjugate}
+\end{equation}
+
+Calculando el producto de las \zcref{eq:wave-packet-res,eq:wave-packet-conjugate},
+
+\begin{align*}
+	\abs{\psi}^{2} = \psi^{*}\psi & = \begin{multlined}[t]
+		                                  \dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{1}{\sqrt{b^{2} + i\tfrac{\hbar t}{m}}}
+		                                  \exp\Biggl[-\dfrac{x^{2}}{2(b^{2} + i\tfrac{\hbar t}{m})}\Biggr]
+		                                  \exp\Biggl\lbrace i\Biggl[\dfrac{k_{0}x - \tfrac{\hbar t}{2m}k_{0}^{2}}{1 + i\tfrac{\hbar t}{mb^{2}}}\Biggr]\Biggr\rbrace\\
+		                                  \Biggl[\dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{1}{\sqrt{b^{2} - i\tfrac{\hbar t}{m}}}
+		                                  \exp\Biggl[-\dfrac{x^{2}}{2(b^{2} - i\tfrac{\hbar t}{m})}\Biggr]
+		                                  \exp\Biggl\lbrace-i\Biggl[\dfrac{k_{0}x - \tfrac{\hbar t}{2m}k_{0}^{2}}{1 - i\tfrac{\hbar t}{mb^{2}}}\Biggr]\Biggr\rbrace\Biggr]
+	                                  \end{multlined},                                                                                                                                                                                                                                                                                                                              \\
+	                              & = \begin{multlined}[t]
+		                                  \dfrac{b}{\sqrt{\pi}}\dfrac{1}{\sqrt{b^{4} + \tfrac{\hbar^{2}t^{2}}{m^{2}}}}\exp \Biggl[\dfrac{-2b^{2}x^{2} + i\tfrac{2b^{2}x^{2}\hbar t}{mb^{2}} -2b^{2}x^{2} -i \tfrac{2b^{2}x^{2}\hbar t}{mb^{2}}}{4b^{4}(1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}})}\Biggr]\\
+		                                  \exp\Biggl\lbrace i\Biggl[\dfrac{-k_{0}x -i\tfrac{\hbar tk_{0}x}{mb^{2}} + \tfrac{\hbar tk_{0}^{2}}{2m} + i\tfrac{\hbar^{2}t^{2}k_{0}^{2}}{2m^{2}b^{2}} + k_{0}x - i\tfrac{\hbar tk_{0}x}{mb^{2}} - \tfrac{\hbar tk_{0}^{2}}{2m} + i\tfrac{\hbar^{2}t^{2}k_{0}^{2}}{2m^{2}b^{2}}}{1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}}\Biggr]\Biggr\rbrace
+	                                  \end{multlined}, \\
+	                              & = \dfrac{1}{b\sqrt{\pi}}\dfrac{1}{\sqrt{1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}}}\exp\Biggl[\dfrac{-4b^{2}x^{2}}{4b^{4}(1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}})}\Biggr]\exp \Biggl\lbrace i \Biggl[\dfrac{-i\tfrac{2\hbar tk_{0}x}{m} + i\tfrac{\hbar^{2}t^{2}k_{0}^{2}}{m^{2}b^{2}}}{1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}}\Biggr]\Biggr\rbrace ,                                                                                                                                     \\
+	                              & = \dfrac{1}{b\sqrt{\pi}}\dfrac{1}{\sqrt{1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}}}\exp \Biggl\lbrace \dfrac{-x^{2} + \tfrac{2\hbar tk_{0}x}{m} - \tfrac{\hbar^{2}t^{2}k_{0}^{2}}{m^{2}}}{b^{2}(1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}})}\Biggr\rbrace ,                                                                                                                                                                                                                                   \\
+	\Aboxedmain{\abs{\psi}^{2}    & = \dfrac{1}{b\sqrt{\pi}}\dfrac{1}{\sqrt{1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}}} \exp \Biggl\lbrace-\dfrac{(x - \tfrac{\hbar tk_{0}}{m})^{2}}{b^{2}\bigl(1 + \tfrac{\hbar^{2}t^{2}}{m^{2}b^{4}}\bigr)}\Biggr\rbrace.}
+\end{align*}
 \end{document}
