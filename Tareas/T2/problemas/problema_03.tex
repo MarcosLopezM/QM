@@ -1,13 +1,7 @@
 %! TeX program = lualatex
 \documentclass[../main.tex]{subfiles}
 
-\usepackage{zref-clever}
-\usepackage{zref-xr}
-
-\zexternaldocument[P2-]{build/problema_02}
-
 \begin{document}
-\setproblem{6}
 \begin{problema}
 	Usando la expresión anterior, muestre que la amplitud del paquete de onda
 	es
@@ -20,7 +14,7 @@
 
 \startsolution
 
-Calculamos \(\psi^{*}\) de la \zcref{P2-eq:wave-packet-res},
+Calculamos \(\psi^{*}\) de la \zcref{eq:wave-packet-res},
 
 \begin{equation}
 	\psi^{*}(t, x) = \dfrac{b^{1/2}}{\pi^{1/4}}\dfrac{1}{\sqrt{b^{2} + i\tfrac{\hbar t}{m}}}
@@ -29,7 +23,7 @@ Calculamos \(\psi^{*}\) de la \zcref{P2-eq:wave-packet-res},
 	\label{eq:wave-packet-conjugate}
 \end{equation}
 
-Calculando el producto de las \zcref{P2-eq:wave-packet-res,eq:wave-packet-conjugate},
+Calculando el producto de las \zcref{eq:wave-packet-res,eq:wave-packet-conjugate},
 
 \begin{align*}
 	\abs{\psi}^{2} = \psi^{*}\psi & = \begin{multlined}[t]
