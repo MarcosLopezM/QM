@@ -3,6 +3,7 @@ name: Compile LaTeX projects
 on:
   push:
     paths:
+      - "Tareas/T1/**"
       - "Tareas/T2/**"
 
 jobs:
@@ -10,8 +11,7 @@ jobs:
     uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
     with:
       relative_path: Tareas/T1
-      pdf_name: main
-      # send_it: true
+      out_name: "Tarea1"
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
 
@@ -19,7 +19,7 @@ jobs:
     uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
     with:
       relative_path: Tareas/T2
-      pdf_name: main
+      out_name: "Tarea2"
       send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
