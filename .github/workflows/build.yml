@@ -5,6 +5,7 @@ on:
     paths:
       - "Tareas/T1/**"
       - "Tareas/T2/**"
+  workflow_dispatch:
 
 jobs:
   build-tarea-1:
