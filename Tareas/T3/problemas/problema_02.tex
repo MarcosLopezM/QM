@@ -1,6 +1,8 @@
+%! TeX program = luatex
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
+\setproblem{8}
 \begin{problema}[20]
 	En clase vimos que en la mecánica cuántica, cuando trabajamos con un
 	paquete de onda que describe una partícula libre de masa \(m\), existe
@@ -25,4 +27,113 @@
 	si la partícula tiene carga \(q\), masa \(m\), y se encuentra en
 	presencia de un campo electromagnético?
 \end{problema}
+
+\startsolution
+
+La ecuación de Schrödinger para una partícula con carga \(q\),
+masa \(m\) y que es encuentra en presencia de un campo electromagnético
+es:
+
+\begin{equation}
+	i\hbar \dot{\psi} = \dfrac{1}{2m}\Biggl[\unbr{ \Bigl(\tfrac{\hbar}{i}\nabla - \tfrac{q}{c}\vect{A}\Bigr)^{2} }_{(A)} + q\phi\Biggr]\psi.
+	\label{eq:Schr-electromagnetic}
+\end{equation}
+
+Desarrollamos (A) de la expresión anterior,
+
+\begin{align*}
+	\Bigl(\dfrac{\hbar}{i}\nabla - \dfrac{q}{c}\vect{A}\Bigr)\cdot\Bigl(\dfrac{\hbar}{i}\nabla - \dfrac{q}{c}\vect{A}\Bigr) & =
+	-\hbar^{2}\nabla \cdot{\nabla} - \dfrac{\hbar q}{ic}\nabla \cdot{\vect{A}} - \dfrac{\hbar q}{ic}\vect{A}\cdot\nabla + \dfrac{q^{2}}{c^{2}}\vect{A}\cdot \vect{A},                                                                                              \\
+	                                                                                                                        & = -\hbar^{2}\nabla^{2} - \dfrac{\hbar q}{ic}(\nabla \cdot{\vect{A}} - \vect{A}\cdot\nabla) + \dfrac{q^{2}}{c^{2}}\abs{\vect{A}}^{2}.
+\end{align*}
+
+Sustituyendo en la \zcref{eq:Schr-electromagnetic} y desarrollando,
+
+\begin{equation*}
+	i\hbar \dot{\psi} = \dfrac{1}{2m}\Biggl[-\hbar^{2}\nabla^{2}{\psi} - \dfrac{\hbar q}{ic}\unbr{ \Bigl((\nabla \cdot{\vect{A}})\psi - \vect{A}\cdot\nabla \cdot{\psi}\Bigr) }_{(B)} + \dfrac{q^{2}}{c^{2}}\abs{\vect{A}}\psi + q\phi\psi\Biggr].
+\end{equation*}
+
+\pagebreak
+Notemos que podemos escribir (B) como \(\nabla \cdot{(\vect{A}\psi)}\),
+
+\begin{equation}
+	i\hbar \dot{\psi} = \dfrac{1}{2m}\Biggl[-\hbar^{2}\nabla^{2}{\psi} - \dfrac{\hbar q}{ic}\nabla \cdot{(\vect{A}\psi)} + \dfrac{q^{2}}{c^{2}}\abs{\vect{A}}\psi + q\phi\psi\Biggr].
+	\label{eq:Schrodinger-computed}
+\end{equation}
+
+Calculamos el conjugado de la \zcref{eq:Schrodinger-computed},
+
+\begin{equation}
+	-i\hbar \dot{\psi}^{*} = \dfrac{1}{2m}\Biggl[-\hbar^{2}\nabla^{2}{\psi^{*}} + \dfrac{\hbar q}{ic}\nabla \cdot{(\vect{A}\psi^{*})} + \dfrac{q^{2}}{c^{2}}\abs{\vect{A}}^{2}\psi^{*} + q\phi\psi^{*}\Biggr].
+	\label{eq:Schrodinger-conjugate}
+\end{equation}
+
+Ahora, multiplicamos la \zcref{eq:Schrodinger-computed} por \(\psi^{*}\),
+
+\begin{equation}
+	i\hbar\psi^{*}\dot{\psi} = \dfrac{1}{2m}\Biggl[-h^{2}\psi^{*}\nabla^{2}{\psi} - \dfrac{\hbar q}{ic}\psi^{*}\nabla \cdot{(\vect{A}\psi)} + \dfrac{q^{2}}{c^{2}}\abs{\vect{A}}^{2}\psi^{*}\psi + q\phi\psi^{*}\psi\Biggr].
+	\label{eq:Schrodinger-computed-product}
+\end{equation}
+
+Y, la \zcref{eq:Schrodinger-conjugate} por \(\psi\),
+
+\begin{equation}
+	-i\hbar \dot{\psi}^{*}\psi = \dfrac{1}{2m}\Biggl[-\hbar^{2}(\nabla^{2}{\psi^{*}})\psi + \dfrac{\hbar q}{ic}\nabla \cdot{(\vect{A}\psi^{*})}\psi + \dfrac{q^{2}}{c^{2}}\abs{\vect{A}}\psi^{*}\psi + q\phi\psi^{*}\psi\Biggr].
+	\label{eq:Schrodinger-conjugate-product}
+\end{equation}
+
+Restando la \zcref{eq:Schrodinger-conjugate-product} de la \zcref{eq:Schrodinger-computed-product},
+
+\begin{equation*}
+	i\hbar(\psi^{*}\psi + \dot{\psi}^{*}\psi) = \dfrac{1}{2m}\Biggl[-\hbar^{2}\unbr{\Bigl(\psi^{*}\nabla^{2}{\psi} - (\nabla^{2}{\psi^{*}})\psi\Bigr)}_{(C)} - \dfrac{\hbar q}{ic}\Bigl(\psi^{*}\nabla \cdot{(\vect{A}\psi)} + (\nabla \cdot{(\vect{A}\psi^{*})})\psi\Bigr) \Biggr].
+\end{equation*}
+
+Por el problema anterior sabemos que podemos escribir (C) como divergencias,
+el primer término como
+
+\begin{align*}
+	\nabla \cdot{(\psi^{*}\nabla{\psi})} & = (\nabla{\psi^{*}})\cdot(\nabla{\psi}) + \psi^{*}\nabla^{2}{\psi},             \\
+	\psi^{*}\nabla^{2}{\psi}             & = \nabla \cdot{(\psi^{*}\nabla{\psi})} - (\nabla{\psi^{*}})\cdot(\nabla{\psi}).
+\end{align*}
+
+y el segundo,
+
+\begin{align*}
+	\nabla \cdot{(\nabla{\psi^{*}})\psi} & = (\nabla^{2}{\psi^{*}})\psi + (\nabla{\psi^{*}})\cdot(\nabla{\psi}),           \\
+	(\nabla^{2}{\psi^{*}})\psi           & = \nabla \cdot{(\nabla{\psi^{*}})\psi} - (\nabla{\psi^{*}})\cdot(\nabla{\psi}).
+\end{align*}
+
+Entonces,
+
+\begin{equation*}
+	i\hbar(\psi^{*}\psi + \dot{\psi}^{*}\psi) = \dfrac{1}{2m}\Biggl[-\hbar^{2}\Bigl(\nabla \cdot{(\psi^{*}\nabla{\psi})} - \nabla \cdot{((\nabla{\psi^{*}})\psi)}\Bigr) - \dfrac{\hbar q}{ic}\unbr{\Bigl(\psi^{*}(\nabla \cdot{(\vect{A}\psi)}) + (\nabla \cdot{(\vect{A}\psi^{*})})\psi\Bigr)}_{(D)}\Biggr]
+\end{equation*}
+
+Desarrollando (D) por componentes:
+
+\begin{align*}
+	\psi^{*}\odv{(A_{i}\psi)}{x_{i}} + \odv{(A_{i}\psi^{*})}{x_{i}}\psi & = \psi^{*}\Biggl[\odv{A_{i}}{x_{i}}\psi + A_{i}\odv{\psi}{x_{i}}\Biggr] + \Biggl[\odv{A_{i}}{x_{i}}\psi^{*} + A_{i}\odv{\psi^{*}}{x_{i}}\Biggr]\psi,      \\
+	                                                                    & = (\nabla \cdot{\vect{A}})\psi^{*}\psi + \psi^{*}\vect{A}\cdot \nabla{\psi} + (\nabla \cdot{\vect{A}})\psi^{*}\psi + \vect{A}\cdot(\nabla{\psi^{*}\psi}), \\
+	                                                                    & = 2(\nabla \cdot{\vect{A}})\psi^{*}\psi + \nabla \cdot{(\vect{A}\psi^{*}\psi)}.
+\end{align*}
+
+Eligiendo \(\nabla \cdot{\vect{A}} = 0\), tenemos que:
+
+\begin{equation*}
+	\pdv{(\psi^{*}\psi)}{t} = -\nabla \cdot{\Biggl[\dfrac{\hbar}{2mi}(\psi^{*}\nabla{\psi} - (\nabla{\psi^{*}})\psi) + \dfrac{q}{2mci}\vect{A}\psi^{*}\psi\Biggr]},
+\end{equation*}
+
+donde
+
+\begin{empheq}[box = \mainresult]{align*}
+	\rho &= \psi^{*}\psi,\\
+	\vect{j} &= \dfrac{\hbar}{2mi}(\psi^{*}\nabla{\psi} - (\nabla{\psi^{*}})\psi) + \dfrac{q}{2mci}\vect{A}\psi^{*}\psi.
+\end{empheq}
+
+Por lo tanto, la ecuación de continuidad para una partícula de carga \(q\), masa
+\(m\) y que se encuentra en presencia de un campo electromagnético es
+
+\begin{empheq}[box = \mainresult]{equation*}
+	\pdv{\rho}{t} + \nabla \cdot{\vect{j}} = 0.
+\end{empheq}
 \end{document}
