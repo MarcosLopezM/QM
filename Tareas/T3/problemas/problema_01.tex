@@ -5,16 +5,121 @@
 	En clase vimos que al cuantificar el cambio en el tiempo de la energía
 	cinética, teníamos
 
-	\begin{equation*}
+	\begin{equation}
 		\odv{E_{\text{pot}}}{t} = \dfrac{\hbar^{2}}{2m}\Biggl[\int \odif[order=3,sep-end=\medspace]{x} \dot{\psi}^{*}(\nabla^{2}{\psi}) + (\nabla^{2}{\psi^{*}})\dot{\psi}\Biggr].
-	\end{equation*}
+		\label{eq:potential-energy}
+	\end{equation}
 
 	El problema consiste en que muestren el cambio en el tiempo de la
 	ecuación anterior se puede escribir como
 
 	\begin{equation*}
-		\odv{E_{\text{pot}}}{t} = \odv*{\Biggl[\dfrac{\hbar^{2}}{2m}\int \odif[sep-end=\medspace, order=3]{x} \dot{\psi}^{*}\nabla^{2}{\psi}\Biggr]}{t}.
+		\odv{E_{\text{pot}}}{t} = \odv*{\Biggl[\dfrac{\hbar^{2}}{2m}\int \odif[sep-end=\medspace, order=3]{x} \psi^{*}\nabla^{2}{\psi}\Biggr]}{t}.
 	\end{equation*}
 \end{problema}
+
+\startsolution
+
+Para saber como debemos proceder, desarrollamos la siguiente expresión:
+
+\begin{align}
+	\pdv*{( \psi^{*}\nabla^{2}{\psi} )}{t} & = \pdv{\psi^{*}}{t}\nabla^{2}{\psi} + \psi^{*}\pdv{\nabla^{2}{\psi}}{t},\nonumber            \\
+	                                       & = \dot{\psi}^{*}\nabla^{2}{\psi} + \psi^{*}\nabla^{2}{\biggl(\pdv{\psi}{t}\biggr)},\nonumber \\
+	                                       & = \dot{\psi}^{*}\nabla^{2}{\psi} + \psi^{*}\nabla^{2}{\dot{\psi}}.\label{eq:time-derivate}
+\end{align}
+
+Comparando las \zcref{eq:potential-energy,eq:time-derivate} identificamos que
+debemos probar que
+
+\begin{align}
+	\int \odif[sep-end=\medspace, order = 3]{r} \nabla^{2}{(\psi^{*})}\dot{\psi} & = \int \odif[sep-end=\medspace, order = 3]{r} \nabla\cdot\nabla\psi^{*}\dot{\psi},\nonumber                         \\
+	                                                                             & = \int \odif[sep-end=\medspace, order = 3]{r} \nabla \cdot{(\nabla{\psi^{*}}\psi)}.\label{eq:laplacian-probability}
+\end{align}
+
+\pagebreak
+Si desarrollamos la \zcref{eq:laplacian-probability} notaremos que hay un
+término extra que no está en nuestra expresión original, veámoslo por componentes, i.e.
+
+\begin{align*}
+	\odv*{\Bigl(\odv{\psi^{*}\dot{\psi}}{x_{i}}\Bigr)}{x_{i}} & = \odv*{\Bigl(\odv{\psi^{*}}{x_{i}}\Bigr)}{x_{i}}\dot{\psi} +
+	\odv{\psi^{*}}{x_{i}}\odv{\dot{\psi}}{x_{i}},                                                                                                                      \\
+	\nabla \cdot{\Bigl[(\nabla{\psi^{*}})\dot{\psi}\Bigr]}    & =
+	\nabla \cdot{[\nabla{\psi^{*}}]}\dot{\psi} + (\nabla{\psi^{*}})\cdot(\nabla{\dot{\psi}}),                                                                          \\
+	\Rightarrow	\nabla \cdot{(\nabla{\psi^{*}})}\dot{\psi}    & = \nabla \cdot{\Bigl[(\nabla{\psi^{*}})\dot{\psi}\Bigr]} - (\nabla{\psi^{*}})\cdot(\nabla{\dot{\psi}})
+\end{align*}
+
+Sustituyendo en la \zcref{eq:laplacian-probability},
+
+\begin{equation*}
+	\int \odif[sep-end=\medspace, order = 3]{r} \nabla \cdot{(\nabla{\psi^{*}})}\dot{\psi} =
+	\int \odif[sep-end=\medspace, order = 3]{r} \nabla \cdot{\Bigl[(\nabla{\psi^{*}})\dot{\psi}\Bigr]} -
+	\int \odif[sep-end=\medspace, order = 3]{r} (\nabla{\psi^{*}})\cdot(\nabla{\dot{\psi}}).
+\end{equation*}
+
+Por el teorema de la divergencia podemos escribir la primera
+integral como una integral de superficie, i.e.
+
+\begin{equation}
+	\int \odif[sep-end=\medspace, order = 3]{r} (\nabla^{2}{\psi^{*}})\dot{\psi} = \int_{\pdif{V}}\odif[sep-end=\medspace]{\vect{S}} \cdot \nabla{(\psi^{*})}\dot{\psi} - \int \odif[sep-end=\medspace, order = 3]{r} (\nabla{\psi^{*}})\cdot(\nabla{\dot{\psi}}).
+	\label{eq:int-laplacian}
+\end{equation}
+
+Sin embargo la primera integral es cero, ya que sabemos que estamos integrando
+sobre todo el espacio, por lo que la frontera de este ``volumen'' está en infinito,
+pero no hay función de onda ahí. La expresión anterior se reduce a
+
+\begin{equation}
+	\int \odif[sep-end=\medspace, order = 3]{r} (\nabla^{2}{\psi^{*}})\dot{\psi} = - \int \odif[sep-end=\medspace, order = 3]{r} (\nabla{\psi^{*}})\cdot(\nabla{\dot{\psi}}).
+	\label{eq:product-grads}
+\end{equation}
+
+Ya estamos más cerca de mostrar lo que deseábamos, haciendo el razonamiento
+análogo para el integrando de la \zcref{eq:product-grads}, i.e. lo
+escribimos como una divergencia estudiándolo por componentes.
+
+\begin{equation*}
+	\odv{\psi^{*}}{x_{i}}\odv{\dot{\psi}}{x_{i}} = \odv{\Bigl(\psi^{*}\odv{\dot{\psi}}{x_{i}}\Bigr)}{x_{i}}
+\end{equation*}
+
+pero
+
+\begin{align*}
+	\odv*{\Bigl(\psi^{*}\odv{\dot{\psi}}{x_{i}}\Bigr)}{x_{i}} & = \odv{\psi^{*}}{x_{i}}\odv{\dot{\psi}}{x_{i}} + \psi^{*}\odv*{\Bigl(\odv{\dot{\psi}}{x_{i}}\Bigr)}{x_{i}},              \\
+	\Rightarrow \odv{\psi^{*}}{x_{i}}\odv{\dot{\psi}}{x_{i}}  & = \odv*{\Bigl(\psi^{*}\odv{\dot{\psi}}{x_{i}}\Bigr)}{x_{i}} - \psi^{*}\odv*{\Bigl(\odv{\dot{\psi}}{x_{i}}\Bigr)}{x_{i}}, \\
+	(\nabla{\psi^{*}})\cdot(\nabla{\dot{\psi}})               & = \nabla \cdot{(\psi^{*}\nabla{\dot{\psi}})} -
+	\psi^{*}\nabla^{2}{\dot{\psi}}.
+\end{align*}
+
+Sustituendo en la \zcref{eq:product-grads},
+
+\begin{align*}
+	\int \odif[sep-end=\medspace, order = 3]{r} (\nabla^{2}{\psi^{*}})\dot{\psi} & =
+	-\int \odif[sep-end=\medspace, order = 3]{r} \nabla \cdot{( \psi^{*}\nabla{\dot{\psi}} )} +
+	\int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\nabla^{2}{\dot{\psi}},                                                                                                                                                                \\
+	                                                                             & = - \int \odif[sep-end=\medspace]{\vect{S}} \cdot(\psi^{*}\nabla{\dot{\psi}}) + \int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\nabla^{2}{\dot{\psi}}.
+\end{align*}
+
+Por el mismo argumento que se usó para pasar de la \zcref{eq:int-laplacian} a
+la \zcref{eq:product-grads}, la primeral integral desaparece, i.e. es igual
+a cero.
+
+\begin{empheq}[box = \secondaryresult]{equation*}
+	\int \odif[sep-end=\medspace, order = 3]{r} (\nabla^{2}{\psi^{*}})\dot{\psi} =
+	\int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\nabla^{2}{\dot{\psi}}.
+\end{empheq}
+
+Sustituyendo la \zcref{eq:time-derivate} en la \zcref{eq:potential-energy},
+
+\begin{align*}
+	\odv{E_{\text{pot}}}{t} & = \dfrac{\hbar^{2}}{2m}\int \odif[sep-end=\medspace, order = 3]{r} \Bigl[\dot{\psi}^{*}\nabla^{2}{\psi} + \psi^{*}\nabla^{2}{\dot{\psi}}\Bigr], \\
+	                        & = \dfrac{\hbar^{2}}{2m}\int \odif[sep-end=\medspace, order = 3]{r} \pdv*{(\psi^{*}\nabla^{2}{\psi})}{t},                                        \\
+	                        & = \dfrac{\hbar^{2}}{2m}\odv{}{t}\int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\nabla^{2}{\psi}.
+\end{align*}
+
+Por lo tanto,
+
+\begin{empheq}[box = \mainresult]{equation*}
+	\odv{E^{\text{pot}}}{t} = \odv{}{t}\Biggl[\dfrac{\hbar^{2}}{2m}\int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\nabla^{2}{\psi}\Biggr].
+\end{empheq}
 \end{document}
 
