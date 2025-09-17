@@ -29,9 +29,9 @@ jobs:
   build-tarea-3:
     uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
     with:
-      relative_path: Tareas/T2
+      relative_path: Tareas/T3
       tex_name: main
       out_name: "Tarea3"
-      # send_it: true
+      send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
