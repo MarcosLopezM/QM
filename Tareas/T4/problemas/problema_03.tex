@@ -1,0 +1,42 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\begin{problema}
+	En clase vimos que al trabajar un oscilador armónico cuántico, la ecuación de
+	Schrödinger independiente del tiempo puede reescribirse como
+
+	\begin{equation*}
+		\op{H}\varphi(x) = E\varphi(x)
+	\end{equation*}
+
+	donde
+
+	\begin{equation*}
+		\op{H} = \hbar\omega \Bigl(\hc{a}\op{a} + \dfrac{1}{2}\Bigr),
+	\end{equation*}
+
+	con \(\hc{a} \equiv \odv{}{x} + u\) y \( \op{a} \equiv \odv{}{u} + u\), los
+	operadores de ascenso y descenso de energía, respectivamente. Muestre que
+
+	\begin{enumerate}
+		\item Los operadores de ascenso y descenso no son operadores hermiteanos.
+		\item Que la acción del operador hacia la derecha
+		      \begin{equation*}
+			      \op{a} \ket{\varphi},
+		      \end{equation*}
+
+		      baja en un cuanto de energía, es decir
+
+		      \begin{equation*}
+			      \op{H}\op{a}\ket{\varphi} = \hbar\omega(\mathcal{E} - 1)\ket{\varphi},
+		      \end{equation*}
+
+		      y que al actuar hacia la izquierda el mismo operador, éste aumenta en un
+		      cuanto la energía, es decir
+
+		      \begin{equation}
+			      \bigl(\bra{\varphi}\op{a}\bigr)\op{H} = \bigl(\bra{\varphi}\op{a}\bigr)\hbar\omega(\mathcal{E} + 1).
+		      \end{equation}
+	\end{enumerate}
+\end{problema}
+\end{document}
