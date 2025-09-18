@@ -6,6 +6,7 @@ on:
       - "Tareas/T1/**"
       - "Tareas/T2/**"
       - "Tareas/T3/**"
+      - "Tareas/T4/**"
   workflow_dispatch:
 
 jobs:
@@ -33,5 +34,15 @@ jobs:
       tex_name: main
       out_name: "Tarea3"
       send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
+
+  build-tarea-4:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Tareas/T4
+      tex_name: main
+      out_name: "Tarea4"
+      # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
