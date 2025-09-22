@@ -18,38 +18,38 @@
 
 	Para determinar  que \(\odv{}{x}\) no es un operador hermiteano, debemos verificar que
 
-	\begin{equation}
-		\avg{\odv{}{x}} \neq \avg{\odv{}{x}}^{*}.
-	\end{equation}
+	\begin{equation*}
+		\avg`*{\odv{}{x}} \neq \avg`*{\odv{}{x}}^{*}.
+	\end{equation*}
 
 	Por un lado, tenemos que el lado izquierdo de la ecuación es
 
 	\begin{align}
-		\avg{\odv{}{x}} & = \matrixel{\psi}{\odv{}{x}}{\psi} = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\odv{}{x}\Bigr)\psi,\nonumber \\
-		\avg{\odv{}{x}} & = \int \odif[sep-end=\medspace]{x} \psi^{*}\odv{\psi}{x}.\label{eq:avg-psi}
+		\avg`*{\odv{}{x}} & = \matrixel`*{\psi}{\odv{}{x}}{\psi} = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\odv{}{x}\Bigr)\psi,\nonumber \\
+		\avg`*{\odv{}{x}} & = \int \odif[sep-end=\medspace]{x} \psi^{*}\odv{\psi}{x}.\label{eq:avg-psi}
 	\end{align}
 
 	Si calculamos el conjugado de la \zcref{eq:avg-psi},
 
 	\begin{align*}
-		\avg{\odv{}{x}}^{*} & = \Biggl[\int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\odv{}{x}\Bigr)\psi\Biggr]^{*},\nonumber \\
-		                    & = \int \odif[sep-end=\medspace]{x} \psi \odv{\psi^{*}}{x}.
+		\avg`*{\odv{}{x}}^{*} & = \Biggl[\int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\odv{}{x}\Bigr)\psi\Biggr]^{*},\nonumber \\
+		                      & = \int \odif[sep-end=\medspace]{x} \psi \odv{\psi^{*}}{x}.
 	\end{align*}
 
-	Integrando por parte con \(u = \psi\) y \( \odif{v} = \odv{\psi^{*}}{x} \odif{x}\),
+	Integrando por partes con \(u = \psi\) y \( \odif{v} = \odv{\psi^{*}}{x} \odif{x}\),
 
 	\begin{align*}
-		\avg{\odv{}{x}}^{*} & = \psi \int \odif[sep-end=\medspace]{x} \odv{\psi^{*}}{x} - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*},
-		                    & = \psi \Bigl(\psi\Bigr)_{-\infty}^{\infty} - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*}.
+		\avg`*{\odv{}{x}}^{*} & = \psi \int \odif[sep-end=\medspace]{x} \odv{\psi^{*}}{x} - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*}, \\
+		                      & = \psi \Bigl(\psi\Bigr)_{-\infty}^{\infty} - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*}.
 	\end{align*}
 
 	Por tareas anteriores sabemos que no hay función de onda en \(\pm \infty\), por lo
 	que el primer término es cero,
 
-	\begin{equation*}
-		\avg{\odv{}{x}}^{*} = - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*}.
+	\begin{equation}
+		\avg`*{\odv{}{x}}^{*} = - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*}.
 		\label{eq:avg-psi-star}
-	\end{equation*}
+	\end{equation}
 
 	Así, de las \zcref{eq:avg-psi,eq:avg-psi-star} concluimos que
 	\(\odv{}{x}\) no es hermiteano.
