@@ -43,6 +43,6 @@ jobs:
       relative_path: Tareas/T4
       tex_name: main
       out_name: "Tarea4"
-      # send_it: true
+      send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
