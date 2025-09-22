@@ -26,5 +26,47 @@
 
 		      si es un operador hermiteano.
 	\end{enumerate}
+
+	\startsolution
+
+	\section{Inciso (a)}
+
+	Consideremos ahora el operador \(\op{p}\) en tres coordenadas espaciales, i.e.
+
+	\begin{equation*}
+		\op{p} = \dfrac{\hbar}{i}\nabla.
+	\end{equation*}
+
+	Expresando el operador en notación de índices,
+
+	\begin{equation*}
+		\vect{A}(\vect{r}) \cdot \op{\vect{p}} = \dfrac{\hbar}{i}A_{\alpha}\pdv{}{x_{\alpha}}.
+	\end{equation*}
+
+	Por lo que,
+
+	\begin{equation}
+		\avg{\vect{A}(\vect{r}) \cdot \op{\vect{p}}} = \int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\Bigl(\dfrac{\hbar}{i}A_{\alpha}\pdv{}{x_{\alpha}}\Bigr)\psi.
+	\end{equation}
+
+	Integrando por partes,
+
+	\begin{equation*}
+		\avg{\vect{A}(\vect{r}) \cdot \op{\vect{p}}} = \matrixel{\psi}{\vect{A}(\vect{r}) \cdot \op{\vect{p}}}{\psi} = \dfrac{\hbar}{i}\Biggl[\psi^{*}(A_{\alpha}\psi)_{-\infty}^{\infty} - \int \odif[sep-end=\medspace, order = 3]{r} \psi A_{\gamma}\pdv{\psi^{*}}{x_{\gamma}}\Biggr].
+	\end{equation*}
+
+	El primer término ``desaparece'', pues sabemos que no hay función de onda en \(\pm \infty\),
+	así
+
+	\begin{align*}
+		\matrixel{\psi}{\vect{A}(\vect{r}) \cdot \op{\vect{p}}}{\psi}            & = -\int \odif[sep-end=\medspace, order = 3]{r} \psi\Biggl(-A_{\gamma}\dfrac{\hbar}{i}\pdv{\psi}{x_{\gamma}}\Biggr)^{*}, \\
+		                                                                         & = -\int \odif[sep-end=\medspace, order = 3]{r} \Biggl(-A_{\gamma}\dfrac{\hbar}{i}\pdv{\psi}{x_{\gamma}}\Biggr)^{*}\psi, \\
+		                                                                         & = - \int \odif[order = 3, sep-end=\medspace]{r} (\vect{A}(\vect{r})\cdot \op{\vect{p}})^{*} \psi^{*}\psi,               \\
+		\Aboxedmain{\matrixel{\psi}{\vect{A}(\vect{r})\cdot \op{\vect{p}}}{\psi} & \neq \braket{(\vect{A}(\vect{r})\cdot \op{\vect{p}})\psi}{\psi}.}
+	\end{align*}
+
+	Por lo tanto, el operador \(\vect{A}(\vect{r})\cdot \op{\vect{p}}\) no es hermiteano.
+
+	\section{Inciso (b)}
 \end{problema}
 \end{document}
