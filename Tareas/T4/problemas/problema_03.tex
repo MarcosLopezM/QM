@@ -27,16 +27,113 @@
 
 		      baja en un cuanto de energía, es decir
 
-		      \begin{equation*}
-			      \op{H}\op{a}\ket{\varphi} = \hbar\omega(\mathcal{E} - 1)\ket{\varphi},
-		      \end{equation*}
+		      \begin{equation}
+			      \op{H}\op{a}\ket{\varphi} = \hbar\omega\op{a}(\mathcal{E} - 1)\ket{\varphi},
+			      \label{eq:annihilation-right}
+		      \end{equation}
 
 		      y que al actuar hacia la izquierda el mismo operador, éste aumenta en un
 		      cuanto la energía, es decir
 
 		      \begin{equation}
 			      \bigl(\bra{\varphi}\op{a}\bigr)\op{H} = \bigl(\bra{\varphi}\op{a}\bigr)\hbar\omega(\mathcal{E} + 1).
+			      \label{eq:annihilation-left}
 		      \end{equation}
 	\end{enumerate}
+
+	\startsolution
+
+	\section{Inciso (a)}
+
+	Para determinar si los operadores de ascenso y descenso no son hermiteanos,
+	hacemos el procedimiento análogo a los problemas anteriores, i.e.
+
+	\begin{align*}
+		\matrixel{\varphi}{\hc{a}}{\varphi} & = \int \odif[sep-end=\medspace]{u} \varphi^{*}\Bigl(-\odv{}{u} + u\Bigr)\varphi,                                        \\
+		                                    & = -\int \odif[sep-end=\medspace]{u} \varphi^{*}\odv{\varphi}{u} + \int \odif[sep-end=\medspace]{u} \varphi^{*}u\varphi.
+	\end{align*}
+
+	Integrando por partes el primer término, tenemos que
+
+	\begin{align*}
+		\matrixel{\varphi}{\hc{a}}{\varphi} & = \varphi^{*}(\varphi)\Bigr\rvert_{-\infty}^{\infty} +
+		\int \odif[sep-end=\medspace]{u} \odv{\varphi^{*}}{u}\varphi + \int \odif[sep-end=\medspace]{u} (u\varphi)^{*}\varphi,    \\
+		                                    & = \int \odif[sep-end=\medspace]{u} \Bigl(\odv{}{u}\varphi\Bigr)^{*}\varphi +
+		\int \odif[sep-end=\medspace]{u} (u\varphi)^{*}\varphi,                                                                   \\
+		                                    & = \int \odif[sep-end=\medspace]{u} \Bigl(\odv{}{u} + u\Bigr)^{*}\varphi^{*}\varphi, \\
+		                                    & = \braket{\op{a}\varphi}{\varphi}.
+	\end{align*}
+
+	Por lo tanto, el operador de ascenso no es hermiteano, pues
+
+	\begin{equation*}
+		\matrixel{\varphi}{\hc{a}}{\varphi} \neq \braket{\op{a}\varphi}{\varphi}.
+	\end{equation*}
+
+	El procedimiento para el operador de descenso es análogo, i.e.
+
+	\begin{align*}
+		\matrixel{\varphi}{\op{a}}{\varphi} & = \int \odif[sep-end=\medspace]{u} \varphi^{*}\Bigl(\odv{}{u} + u\Bigr)\varphi,                                                                                               \\
+		                                    & = \int \odif[sep-end=\medspace]{u} \varphi^{*}\odv{\varphi}{u} + \int \odif[sep-end=\medspace]{u} \varphi^{*}u\varphi,                                                        \\
+		                                    & = \varphi^{*}(\varphi)\Bigr\rvert_{-\infty}^{\infty}  - \int\odif[sep-end=\medspace]{u} \odv{\varphi^{*}}{u}\varphi + \int \odif[sep-end=\medspace]{u} (u\varphi)^{*}\varphi, \\
+		                                    & = \int \odif[sep-end=\medspace]{u} \Bigl(-\odv{}{u}\varphi\Bigr)^{*}\varphi + \int \odif[sep-end=\medspace]{u} (u\varphi)^{*}\varphi,                                         \\
+		                                    & = \int \odif[sep-end=\medspace]{u} \Bigl(-\odv{}{u} + u\Bigr)^{*}\varphi^{*}\varphi,                                                                                          \\
+		                                    & = \braket{\hc{a}\varphi}{\varphi}.
+	\end{align*}
+
+	Por lo tanto, el operador de descenso no es hermiteano,
+
+	\begin{equation*}
+		\matrixel{\varphi}{\op{a}}{\varphi} = \braket{\hc{a}\varphi}{\varphi}.
+	\end{equation*}
+
+	\section{Inciso (b)}
+
+	Para determinar la acción el operador \(\op{a}\) hacia la derecha, desarrollamos
+	el lado izquierdo de la \zcref{eq:annihilation-right}, i.e.
+
+	\begin{align*}
+		\op{H}(\op{a}\ket{\varphi}) & = \hbar\omega \bigl(\op{a}\hc{a} - \tfrac{1}{2}\bigr)(\op{a}\ket{\varphi}), \\
+		                            & = \hbar\omega(\op{a}\hc{a}\op{a} - \tfrac{1}{2}\op{a})\ket{\varphi},        \\
+		                            & = \hbar\omega \op{a}(\hc{a}\op{a} - \tfrac{1}{2})\ket{\varphi}.
+	\end{align*}
+
+	Usando que \(\op{a}\hc{a} - \hc{a}\op{a} = 1 \implies \op{a}\hc{a} - 1\), así
+
+	\begin{align*}
+		\op{H}(\op{a}\ket{\varphi}) & = \op{a}\Bigl[\hbar\omega(\op{a}\hc{a} - \tfrac{1}{2}) - \hbar\omega\Bigr]\ket{\varphi}, \\
+		                            & = \op{a}\Bigl(E - \hbar\omega\Bigr)\ket{\varphi},
+	\end{align*}
+
+	pero \(E = \hbar\omega \mathcal{E}\), entonces
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\op{H}(\op{a}\ket{\varphi})  = \hbar\omega \op{a}(\mathcal{E} - 1)\ket{\varphi}.
+	\end{empheq}
+
+	Si ahora el operador \(\op{a}\) actúa hacia la izquierda, lo primero que
+	podemos hacer es calcular el conjugado del lado izquierdo de la \zcref{eq:annihilation-left}, i.e.
+
+	\begin{equation*}
+		\Bigl[(\bra{\varphi}\op{a})\op{H}\Bigr]^{*} = \op{H}(\hc{a}\ket{\varphi}).
+	\end{equation*}
+
+	Entonces,
+
+	\begin{align*}
+		\op{H}(\hc{a}\ket{\varphi}) & = \hbar\omega \Bigl(\hc{a}\op{a} + \tfrac{1}{2}\Bigr)(\hc{a}\ket{\varphi}),                         \\
+		                            & = \hbar\omega \Bigl(\hc{a}\op{a}\hc{a} + \tfrac{1}{2}\hc{a}\Bigr)\ket{\varphi},                     \\
+		                            & = \hbar\omega \hc{a}\Bigl(\op{a}\hc{a} + \tfrac{1}{2}\Bigr)\ket{\varphi},                           \\
+		                            & = \hbar\omega \hc{a}\Bigl(\hc{a}\op{a} + \tfrac{1}{2} + 1\Bigr)\ket{\varphi},                       \\
+		                            & = \hc{a}\Bigl[\hbar\omega \Bigl(\hc{a}\op{a} + \tfrac{1}{2}\Bigr) + \hbar\omega\Bigr]\ket{\varphi}, \\
+		                            & = \hc{a}\Bigl(E + \hbar\omega\Bigr)\ket{\varphi},                                                   \\
+		\op{H}(\hc{a}\ket{\varphi}) & = \hbar\omega \hc{a}\Bigl(\mathcal{E} + 1\Bigr)\ket{\varphi}.
+	\end{align*}
+
+	Para regresar a la expresión original, calculamos el conjugado, i.e.
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		(\bra{\varphi}\op{a})\op{H} = (\bra{\varphi}\op{a})\hbar\omega(\mathcal{E} + 1).
+	\end{empheq}
 \end{problema}
 \end{document}
