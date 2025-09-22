@@ -11,5 +11,84 @@
 			      \avg{\op{p}}^{*} = \avg{\op{p}}.
 		      \end{equation*}
 	\end{enumerate}
+
+	\startsolution
+
+	\section{Inciso (a)}
+
+	Para determinar  que \(\odv{}{x}\) no es un operador hermiteano, debemos verificar que
+
+	\begin{equation}
+		\avg{\odv{}{x}} \neq \avg{\odv{}{x}}^{*}.
+	\end{equation}
+
+	Por un lado, tenemos que el lado izquierdo de la ecuación es
+
+	\begin{align}
+		\avg{\odv{}{x}} & = \matrixel{\psi}{\odv{}{x}}{\psi} = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\odv{}{x}\Bigr)\psi,\nonumber \\
+		\avg{\odv{}{x}} & = \int \odif[sep-end=\medspace]{x} \psi^{*}\odv{\psi}{x}.\label{eq:avg-psi}
+	\end{align}
+
+	Si calculamos el conjugado de la \zcref{eq:avg-psi},
+
+	\begin{align*}
+		\avg{\odv{}{x}}^{*} & = \Biggl[\int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\odv{}{x}\Bigr)\psi\Biggr]^{*},\nonumber \\
+		                    & = \int \odif[sep-end=\medspace]{x} \psi \odv{\psi^{*}}{x}.
+	\end{align*}
+
+	Integrando por parte con \(u = \psi\) y \( \odif{v} = \odv{\psi^{*}}{x} \odif{x}\),
+
+	\begin{align*}
+		\avg{\odv{}{x}}^{*} & = \psi \int \odif[sep-end=\medspace]{x} \odv{\psi^{*}}{x} - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*},
+		                    & = \psi \Bigl(\psi\Bigr)_{-\infty}^{\infty} - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*}.
+	\end{align*}
+
+	Por tareas anteriores sabemos que no hay función de onda en \(\pm \infty\), por lo
+	que el primer término es cero,
+
+	\begin{equation*}
+		\avg{\odv{}{x}}^{*} = - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x} \psi^{*}.
+		\label{eq:avg-psi-star}
+	\end{equation*}
+
+	Así, de las \zcref{eq:avg-psi,eq:avg-psi-star} concluimos que
+	\(\odv{}{x}\) no es hermiteano.
+
+	\section{Inciso (b)}
+
+	El operador \(\op{p}\) en una dimensión es
+
+	\begin{equation*}
+		\op{p} = \dfrac{\hbar}{i}\odv{}{x}.
+	\end{equation*}
+
+	Entonces,
+
+	\begin{align}
+		\avg{\op{p}} & = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\dfrac{\hbar}{i}\odv{}{x}\Bigr)\psi,\nonumber        \\
+		\avg{\op{p}} & = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\dfrac{\hbar}{i}\odv{\psi}{x}\Bigr).\label{eq:avg-p}
+	\end{align}
+
+	Y,
+
+	\begin{equation*}
+		\avg{\op{p}}^{*} = \int \odif[sep-end=\medspace]{x} \psi \Bigl(-\dfrac{\hbar}{i}\odv{\psi^{*}}{x}\Bigr).
+	\end{equation*}
+
+	Integrando por partes,
+
+	\begin{align}
+		\avg{\op{p}}^{*} & = \psi \Bigl(-\dfrac{\hbar}{i}\psi^{*}\Bigr)_{-\infty}^{\infty} - \int \odif[sep-end=\medspace]{x} \odv{\psi}{x}\Bigl(-\dfrac{\hbar}{i}\psi^{*}\Bigr),\nonumber \\
+		\avg{\op{p}}^{*} & = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\dfrac{\hbar}{i}\odv{\psi}{x}\Bigr). \label{eq:avg-p-star}
+	\end{align}
+
+	De las \zcref{eq:avg-p,eq:avg-p-star} tenemos
+
+	\begin{equation*}
+		\avg{\op{p}} = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\dfrac{\hbar}{i}\odv{\psi}{x}\Bigr) = \int \odif[sep-end=\medspace]{x} \psi^{*}\Bigl(\dfrac{\hbar}{i}\odv{\psi}{x}\Bigr) = \avg{\op{p}}^{*}.
+	\end{equation*}
+
+	Por lo tanto \(\avg{\op{p}}\) es un operador hermiteano.
+
 \end{problema}
 \end{document}
