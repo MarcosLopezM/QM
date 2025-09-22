@@ -45,9 +45,9 @@
 
 	Por lo que,
 
-	\begin{equation}
+	\begin{equation*}
 		\avg{\vect{A}(\vect{r}) \cdot \op{\vect{p}}} = \int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\Bigl(\dfrac{\hbar}{i}A_{\alpha}\pdv{}{x_{\alpha}}\Bigr)\psi.
-	\end{equation}
+	\end{equation*}
 
 	Integrando por partes,
 
@@ -59,14 +59,46 @@
 	así
 
 	\begin{align*}
-		\matrixel{\psi}{\vect{A}(\vect{r}) \cdot \op{\vect{p}}}{\psi}            & = -\int \odif[sep-end=\medspace, order = 3]{r} \psi\Biggl(-A_{\gamma}\dfrac{\hbar}{i}\pdv{\psi}{x_{\gamma}}\Biggr)^{*}, \\
-		                                                                         & = -\int \odif[sep-end=\medspace, order = 3]{r} \Biggl(-A_{\gamma}\dfrac{\hbar}{i}\pdv{\psi}{x_{\gamma}}\Biggr)^{*}\psi, \\
-		                                                                         & = - \int \odif[order = 3, sep-end=\medspace]{r} (\vect{A}(\vect{r})\cdot \op{\vect{p}})^{*} \psi^{*}\psi,               \\
-		\Aboxedmain{\matrixel{\psi}{\vect{A}(\vect{r})\cdot \op{\vect{p}}}{\psi} & \neq \braket{(\vect{A}(\vect{r})\cdot \op{\vect{p}})\psi}{\psi}.}
+		\matrixel{\psi}{\vect{A}(\vect{r}) \cdot \op{\vect{p}}}{\psi}            & = \int \odif[sep-end=\medspace, order = 3]{r} \psi\Biggl(-\dfrac{\hbar}{i}\odv{}{x_{\gamma}}A_{\gamma}\psi\Biggr)^{*}, \\
+		                                                                         & = \int \odif[sep-end=\medspace, order = 3]{r} \Biggl(-\dfrac{\hbar}{i}\odv{}{x_{\gamma}}A_{\gamma}\psi\Biggr)^{*}\psi, \\
+		                                                                         & =  \int \odif[order = 3, sep-end=\medspace]{r} (\op{\vect{p}}\cdot \vect{A}(\vect{r}))^{*} \psi^{*}\psi,               \\
+		\Aboxedmain{\matrixel{\psi}{\vect{A}(\vect{r})\cdot \op{\vect{p}}}{\psi} & \neq \braket{(\op{\vect{p}}\cdot \vect{A}(\vect{r}))\psi}{\psi}.}
 	\end{align*}
 
 	Por lo tanto, el operador \(\vect{A}(\vect{r})\cdot \op{\vect{p}}\) no es hermiteano.
 
 	\section{Inciso (b)}
+
+	Calculamos
+
+	\begin{align}
+		\avg`*{\dfrac{1}{2}\Bigl[\vect{A}(\vect{r})\cdot \op{\vect{p}} + \op{\vect{p}}\cdot \vect{A}(\vect{r})\Bigr]} & = \int \odif[order = 3, sep-end=\medspace]{r} \psi^{*}\dfrac{1}{2}\Bigl[A_{\alpha}\dfrac{\hbar}{i}\pdv{}{x_{\alpha}} + \dfrac{\hbar}{i}\pdv{}{x_{\alpha}}A_{\alpha}\Bigr]\psi,\nonumber                                                                                                    \\
+		\avg`*{\dfrac{1}{2}\Bigl[\vect{A}(\vect{r})\cdot \op{\vect{p}} + \op{\vect{p}}\cdot \vect{A}(\vect{r})\Bigr]} & = \dfrac{1}{2}\unbr{ \int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}A_{\alpha}\dfrac{\hbar}{i}\odv{\psi}{x_{\alpha}}}_{(A)} + \dfrac{1}{2}\unbr{ \int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\dfrac{\hbar}{i}\pdv{(A_{\beta}\psi)}{x_{\beta}}}_{(B)}.\label{eq:avg-normal-op}
+	\end{align}
+
+	Integrando por partes (A),
+
+	\begin{align}
+		\int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}A_{\alpha}\dfrac{\hbar}{i}\odv{\psi}{x_{\alpha}} & = \psi^{*}\Bigl(A_{\alpha}\dfrac{\hbar}{i}\psi\Bigr)\Bigr\rvert_{-\infty}^{\infty} - \int \odif[order = 3, sep-end=\medspace]{r} \psi A_{\alpha}\dfrac{\hbar}{i}\pdv{\psi^{*}}{x_{\alpha}},\nonumber \\
+		                                                                                                     & = \int \odif[sep-end=\medspace, order = 3]{r} \Bigl(-\dfrac{\hbar}{i}\pdv{}{x_{\alpha}}A_{\alpha}\psi\Bigr)^{*}\psi,\nonumber                                                                        \\
+		                                                                                                     & = \braket`*{(\op{\vect{p}}\cdot \vect{A}(\vect{r}))\psi}{\psi}.\label{eq:first-term}
+	\end{align}
+
+	Integrando por partes (B),
+
+	\begin{align}
+		\int \odif[sep-end=\medspace, order = 3]{r} \psi^{*}\dfrac{\hbar}{i}\pdv{(A_{\beta}\psi)}{x_{\beta}} & = \psi^{*}\Bigl(\dfrac{\hbar}{i}A_{\alpha}\psi\Bigr)\Bigr\rvert_{-\infty}^{\infty} - \int \odif[sep-end=\medspace, order = 3]{r} \psi A_{\alpha}\dfrac{\hbar}{i}\pdv{\psi^{*}}{x_{\alpha}},\nonumber \\
+		                                                                                                     & = \int \odif[sep-end=\medspace, order = 3]{r} \Bigl(-A_{\alpha}\dfrac{\hbar}{i}\pdv{}{x_{\alpha}\psi}\Bigr)^{*}\psi,\nonumber                                                                        \\
+		                                                                                                     & = \braket`*{(\vect{A}(\vect{r})\cdot \op{\vect{p}})\psi}{\psi}.\label{eq:second-term}
+	\end{align}
+
+	Sustituyendo las \zcref{eq:first-term,eq:second-term} en la \zcref{eq:avg-normal-op},
+
+	\begin{align*}
+		\dfrac{1}{2}\matrixel{\psi}{\vect{A}(\vect{r})\cdot \op{\vect{p}}}{\psi} + \dfrac{1}{2}\matrixel{\psi}{\op{\vect{p}}\cdot \vect{A}(\vect{r})}{\psi} & = \dfrac{1}{2}\braket`*{(\op{\vect{p}}\cdot \vect{A}(\vect{r}))\psi}{\psi} + \dfrac{1}{2}\braket`*{(\vect{A}(\vect{r})\cdot \op{\vect{p}})\psi}{\psi}, \\
+		\dfrac{1}{2}\matrixel{\psi}{\vect{A}(\vect{r})\cdot \op{\vect{p}}}{\psi} + \dfrac{1}{2}\matrixel{\psi}{\op{\vect{p}}\cdot \vect{A}(\vect{r})}{\psi} & = \dfrac{1}{2}\braket`*{(\vect{A}(\vect{r})\cdot \op{\vect{p}})\psi}{\psi} + \dfrac{1}{2}\braket`*{(\op{\vect{p}}\cdot \vect{A}(\vect{r}))\psi}{\psi}.
+	\end{align*}
+
+	Por lo tanto, el operador es hermiteano.
 \end{problema}
 \end{document}
