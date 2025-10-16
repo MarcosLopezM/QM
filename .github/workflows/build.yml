@@ -51,7 +51,7 @@ jobs:
   build-problema-14:
     uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
     with:
-      relative_path: Tareas/Problema14
+      relative_path: Tareas/P14
       tex_name: main
       out_name: "Problema14"
       send_it: true
