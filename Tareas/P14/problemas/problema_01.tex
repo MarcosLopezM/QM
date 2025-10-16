@@ -8,5 +8,105 @@
 		k_{2} \cot \Bigl(\dfrac{k_{2}a}{2}\Bigr) & = -k_{1}, \\
 		k_{2}\tan \Bigl(\dfrac{k_{2}a}{2}\Bigr)  & = k_{1}.
 	\end{align*}
+
+	\startsolution
+
+	Consideramos el problema del pozo de potencial finito para el caso
+	en el que \(E < V_{0}\), donde el potencial está dado por
+
+	\begin{equation*}
+		V(x) =
+		\begin{dcases}
+			V_{0} & \text{si } x < -\tfrac{a}{2},                      \\
+			0     & \text{si } -\tfrac{a}{2} \leq x \leq \tfrac{a}{2}, \\
+			V_{0} & \text{si } x > \tfrac{a}{2}.
+		\end{dcases}
+	\end{equation*}
+
+	Partiendo de la ecuación de Schrödinger independiente del tiempo, tenemos
+	que las soluciones en las tres regiones son:
+
+	\begin{itemize}
+		\item Región I (\(x < -\tfrac{a}{2}\))
+
+		      \begin{equation*}
+			      \psi_{I}(x) = A \mathrm{e}^{k_{1} x}
+		      \end{equation*}
+
+		      El término creciente se descarta, ya que cuando \(x \to -\infty\), este
+		      diverge.
+
+		\item Región II
+
+		      Para esta región, \(-\tfrac{a}{2} < x < \tfrac{a}{2}\), la solución es
+
+		      \begin{equation*}
+			      \psi_{II}(x) = B \sin\bigl(k_{2}x\bigr) + C\cos\bigl(k_{2}x\bigr).
+		      \end{equation*}
+
+		\item Región III
+
+		      Un análisis análogo al de la región I nos lleva a la solución
+
+		      \begin{equation*}
+			      \psi_{III}(x) = D \mathrm{e}^{-k_{1}x}.
+		      \end{equation*}
+	\end{itemize}
+
+	Para encontrar la solución completa, debemos imponer las condiciones de frontera
+
+	\begin{align*}
+		\psi_{I}\bigl(-\tfrac{a}{2}\bigr) & = \psi_{II}\bigl(-\tfrac{a}{2}\bigr), \\
+		\psi_{II}\bigl(\tfrac{a}{2}\bigr) & = \psi_{III}\bigl(\tfrac{a}{2}\bigr).
+	\end{align*}
+
+	Y, además, tanto la función de onda como su derivada deben ser continuas en la vecindad
+	de la frontera, es decir,
+
+	\begin{align*}
+		\op{p}\psi_{I}\bigl(-\tfrac{a}{2}\bigr) & = \op{p}\psi_{II}\bigl(-\tfrac{a}{2}\bigr), \\
+		\op{p}\psi_{II}\bigl(\tfrac{a}{2}\bigr) & = \op{p}\psi_{III}\bigl(\tfrac{a}{2}\bigr).
+	\end{align*}
+
+	Por lo tanto, tenemos que el sistema de ecuaciones es
+
+	\begin{align}
+		A \mathrm{e}^{-k_{1}a/2}      & = C \cos\Bigl(-k_{2}\dfrac{a}{2}\Bigr) + B \sin\Bigl(-k_{2}\dfrac{a}{2}\Bigr),\label{eq:psi_neg}         \\
+		D \mathrm{e}^{-k_{1}a/2}      & = C \cos\Bigl(k_{2}\dfrac{a}{2}\Bigr) + B \sin\Bigl(k_{2}\dfrac{a}{2}\Bigr),\label{eq:psi_pos}           \\
+		Ak_{1}\mathrm{e}^{-k_{1}a/2}  & = -Ck_{2}\sin\Bigl(-k_{2}\dfrac{a}{2}\Bigr) + Bk_{2}\cos\Bigl(-k_{2}\dfrac{a}{2}\Bigr),\label{eq:dv_neg} \\
+		-Dk_{1}\mathrm{e}^{-k_{1}a/2} & = -Ck_{2}\sin\Bigl(k_{2}\dfrac{a}{2}\Bigr) + Bk_{2}\cos\Bigl(k_{2}\dfrac{a}{2}\Bigr)\label{eq:dv_pos}.
+	\end{align}
+
+	Para reducir este sistema a las ecuaciones que queremos, dado que el
+	potencial es simétrico, las soluciones puede clasificarse según su
+	paridad. Primero, para las soluciones pares, tenemos que \(B = 0\),
+	entonces las \zcref{eq:psi_neg,eq:dv_neg} quedan como
+
+	\begin{align}
+		A \mathrm{e}^{-k_{1}a/2}     & = C \cos\Bigl(k_{2}\dfrac{a}{2}\Bigr),\label{eq:even_psi_neg}    \\
+		Ak_{1}\mathrm{e}^{-k_{1}a/2} & = Ck_{2}\sin\Bigl(k_{2}\dfrac{a}{2}\Bigr).\label{eq:even_dv_neg}
+	\end{align}
+
+	Calculando el cociente entre las \zcref{eq:even_dv_neg, eq:even_psi_neg},
+
+	\begin{align*}
+		k_{2}\dfrac{\sin\Bigl(k_{2}\dfrac{a}{2}\Bigr)}{\cos\Bigl(k_{2}\dfrac{a}{2}\Bigr)} & = k_{1},  \\
+		\Aboxedmain{k_{2}\tan\Bigl(\dfrac{k_{2}a}{2}\Bigr)                                & = k_{1}.}
+	\end{align*}
+
+	Mientras que para las soluciones impares, \(C = 0\),
+	tal que las \zcref{eq:psi_pos,eq:dv_pos} quedan como:
+
+	\begin{align*}
+		D \mathrm{e}^{-k_{1}a/2}      & = B \sin\Bigl(k_{2}\dfrac{a}{2}\Bigr),     \\
+		-Dk_{1}\mathrm{e}^{-k_{1}a/2} & = Bk_{2}\cos\Bigl(k_{2}\dfrac{a}{2}\Bigr).
+	\end{align*}
+
+	Así, el cociente entre estas dos ecuaciones es:
+
+	\begin{align*}
+		k_{2}\dfrac{\cos\Bigl(k_{2}\dfrac{a}{2}\Bigr)}{\sin\Bigl(k_{2}\dfrac{a}{2}\Bigr)} & = -k_{1},  \\
+		\Aboxedmain{k_{2} \cot\Bigl(\dfrac{k_{2}a}{2}\Bigr)                               & = -k_{1}.}
+	\end{align*}
 \end{problema}
 \end{document}
