@@ -8,6 +8,7 @@ on:
       - "Tareas/T3/**"
       - "Tareas/T4/**"
       - "Tareas/P14/**"
+      - "Examenes/E1"
   workflow_dispatch:
 
 jobs:
@@ -54,6 +55,16 @@ jobs:
       relative_path: Tareas/P14
       tex_name: main
       out_name: "Problema14"
+      send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
+
+  build-examen-1:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Examenes/E1
+      tex_name: main
+      out_name: "ExamenParcial1"
       send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
