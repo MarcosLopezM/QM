@@ -55,7 +55,7 @@ jobs:
       relative_path: Tareas/P14
       tex_name: main
       out_name: "Problema14"
-      send_it: true
+      # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
 
@@ -65,6 +65,6 @@ jobs:
       relative_path: Examenes/E1
       tex_name: main
       out_name: "ExamenParcial1"
-      send_it: true
+      # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
