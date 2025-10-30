@@ -1,6 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
+\setproblem{15}
 \begin{problema}
 	Usando las relaciones \([r_{i}, p_{j}] - i \delta_{ij}\), mostrar que:
 
@@ -10,5 +11,96 @@
 
 	con \(\op{\vect{L}} = \op{\vect{r}} \mul \op{\vect{p}}\) el momento
 	angular y \( \op{L}{i}\) alguna componente de \(\op{\vect{L}}\).
+
+	\startsolution
+
+	Sabemos que \(\op{L}{i} = \epsilon_{ijk} \op{r}{j}\op{p}{k}\)
+	y que \([\op{r}{i}, \op{p}{j}] = i\hbar \delta_{ij}\). Entonces,
+
+	\begin{align}
+		[\op{L}{}{2}, \op{L}{n}] & = \op{L}{m}[\epsilon_{mjk}\op{r}{j}\op{p}{k}, \epsilon_{nab}\op{r}{a}\op{p}{b}]
+		+ [\epsilon_{mjk}\op{r}{j}\op{p}{k}, \epsilon_{nab}\op{r}{a}\op{p}{b}]\op{L}{m},\nonumber                  \\
+		                         & = \op{L}{m}\epsilon_{mjk}\epsilon_{nab}
+		[\op{r}{j}\op{p}{k}, \op{r}{a}\op{p}{b}]
+		+ \epsilon_{mjk}\epsilon_{nab}
+		[\op{r}{j}\op{p}{k}, \op{r}{a}\op{p}{b}]\op{L}{m}.\label{eq:commutator-L2-Ln}
+	\end{align}
+
+	Desarrollamos \(\epsilon_{mjk}\epsilon_{nab}[\op{r}{j}\op{p}{k}, \op{r}{a}\op{p}{b}]
+	\),
+
+	\begin{align*}
+		\epsilon_{mjk}\epsilon_{nab}[\op{r}{j}\op{p}{k}, \op{r}{a}\op{p}{b}] & =
+		\epsilon_{mjk}\epsilon_{nab} \Bigl(\op{r}{j}[\op{p}{k}, \op{r}{a}\op{p}{b}] +
+		[\op{r}{j}, \op{r}{a}\op{p}{b}]\op{p}{k}\Bigr),                                                                                                            \\
+		                                                                     & = \epsilon_{mjk}\epsilon_{nab}\Biggl(\op{r}{j}\Bigl([\op{p}{k}, \op{r}{a}]\op{p}{b}
+			+ \op{r}{a}[\op{p}{k}, \op{p}{b}]\Bigr) +
+		\Bigl([\op{r}{j}, \op{r}{a}]\op{p}{b} +
+		\op{r}{a}[\op{r}{j}, \op{p}{b}]\Bigr)\op{p}{k}\Biggr),                                                                                                     \\
+		                                                                     & = \epsilon_{mjk}\epsilon_{nab}\Bigl(\op{r}{j}(-i\hbar\delta_{ka})\op{p}{b} +
+		\op{r}{a}(i\hbar\delta_{jb})\op{p}{k} \Bigr),                                                                                                              \\
+		                                                                     & = i\hbar \Bigl(
+		\epsilon_{mjk}\epsilon_{nab}\delta_{jb}\op{r}{a}\op{p}{k} - \epsilon_{mjk}\epsilon_{nab}\delta_{ka}\op{r}{j}\op{p}{b}\Bigr),                               \\
+		                                                                     & = i\hbar \Bigl(
+		\epsilon_{mbk}\epsilon_{nab}\op{r}{a}\op{p}{k} - \epsilon_{mja}\epsilon_{nab}\op{r}{j}\op{p}{b}\Bigr).
+	\end{align*}
+
+	Renombrando índices en el primer término de la expresión anterior:
+	\(b \to a, k \to b, a \to j\),
+
+	\begin{align}
+		\epsilon_{mjk}\epsilon_{nab}[\op{r}{j}\op{p}{k}, \op{r}{a}\op{p}{b}] & =
+		i\hbar \Bigl(\epsilon_{mab}\epsilon_{nja}\op{r}{j}\op{p}{b}
+		- \epsilon_{mja}\epsilon_{nab}\op{r}{j}\op{p}{b}\Bigr),\nonumber                                                   \\
+		                                                                     & = i\hbar \Bigl(\epsilon_{mab}\epsilon_{nja}
+		- \epsilon_{mja}\epsilon_{nab}\Bigr)\op{r}{j}\op{p}{b}.
+		\label{eq:commutator-rjpk-rapb}
+	\end{align}
+
+	\pagebreak
+	Notemos que \(\epsilon_{mab} = - \epsilon_{mba}\) y \(\epsilon_{nab} = -\epsilon_{nba}\),
+	así las relaciones \(\epsilon-\delta\),
+
+	\begin{align*}
+		\epsilon_{mba}\epsilon_{nja} & = \delta_{mn}\delta_{bj} - \delta_{mj}\delta_{bn}, \\
+		\epsilon_{mja}\epsilon_{nba} & = \delta_{mn}\delta_{jb} - \delta_{mb}\delta_{jn}.
+	\end{align*}
+
+	Sustituyendo en la \zcref{eq:commutator-rjpk-rapb},
+
+	\begin{align*}
+		\epsilon_{mjk}\epsilon_{nab}[\op{r}{j}\op{p}{k}, \op{r}{a}\op{p}{b}] & =
+		i\hbar \Bigl(-\delta_{mn}\delta_{bj} + \delta_{mj}\delta_{bn} + \delta_{mn}\delta_{jb} - \delta_{mb}\delta_{jn}\Bigr)\op{r}{j}\op{p}{b},                       \\
+		                                                                     & = i\hbar \Bigl(\delta_{mj}\delta_{nb} - \delta_{mb}\delta_{nj}\Bigr)\op{r}{j}\op{p}{b}, \\
+		                                                                     & = i\hbar\epsilon_{mnk}\epsilon_{jbk}\op{r}{j}\op{p}{b},                                 \\
+		                                                                     & = i\hbar\epsilon_{mnk}\op{L}{k}.
+	\end{align*}
+
+	Entonces, la \zcref{eq:commutator-L2-Ln} queda como:
+
+	\begin{equation*}
+		[\op{L}{}{2}, \op{L}{n}] = \op{L}{m}\Bigl(i\hbar\epsilon_{mnk}\op{L}{k}\Bigr) +
+		\Bigl(i\hbar\epsilon_{mnk}\op{L}{k}\Bigr)\op{L}{m}.
+	\end{equation*}
+
+	Intercambiando \(m \leftrightarrow k\) en el segundo término,
+
+	\begin{equation*}
+		[\op{L}{}{2}, \op{L}{n}] = i\hbar\epsilon_{mnk}\op{L}{m}\op{L}{k} +
+		i\hbar\epsilon_{knm}\op{L}{m}\op{L}{k}.
+	\end{equation*}
+
+	Notemos que \(\epsilon_{kmn} = -\epsilon_{mnk}\),
+
+	\begin{align*}
+		[\op{L}{}{2}, \op{L}{n}] & = i\hbar\epsilon_{mnk}\Bigl(\op{L}{m}\op{L}{k} - \op{L}{m}\op{L}{k}\Bigr), \\
+		                         & = i\hbar\epsilon_{mnk}(0).
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		[\op{L}{}{2}, \op{L}{n}] = 0.
+	\end{empheq}
 \end{problema}
 \end{document}
