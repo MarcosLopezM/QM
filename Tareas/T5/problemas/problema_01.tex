@@ -25,5 +25,114 @@
 			      \matrixel{l^{\prime}m^{\prime}}{\op{L}{-}{2}}{lm}
 		      \end{equation*}
 	\end{enumerate}
+
+	\startsolution
+
+	Recordando que podemos escribir los operadores como:
+
+	\begin{align*}
+		\op{L}{x} & = \dfrac{1}{2}(\op{L}{+} + \op{L}{-}),  \\
+		\op{L}{y} & = \dfrac{1}{2i}(\op{L}{+} - \op{L}{-}).
+	\end{align*}
+
+	\pagebreak
+	\section*{Inciso (a)}
+
+	Para el valor esperado de \(\op{L}{x}{2}\) tenemos
+
+	\begin{align*}
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{x}{2}}{lm} & =
+		\matrixel`*{l^{\prime}m^{\prime}}{\Bigl(\dfrac{1}{2}(\op{L}{+} + \op{L}{-})\Bigr)^{2}}{lm},                                                                                                                                    \\
+		                                                  & = \matrixel`*{l^{\prime}m^{\prime}}{\dfrac{1}{4}\Bigl(\op{L}{+}{2} + \op{L}{+}\op{L}{-} +
+		\op{L}{-}\op{L}{+} + \op{L}{-}{2}\Bigr)}{lm},                                                                                                                                                                                  \\
+		                                                  & = \dfrac{1}{4}\Biggl[\matrixel{l^{\prime}m^{\prime}}{\op{L}{+}{2}}{lm} +
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{+}\op{L}{-}}{lm} + \matrixel{l^{\prime}m^{\prime}}{\op{L}{-}\op{L}{+}}{lm} +
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{-}{2}}{lm}\Biggr],                                                                                                                                                                      \\
+		                                                  & = \dfrac{1}{4}\Biggl[\begin{multlined}[t]
+			                                                                         \hbar\sqrt{l(l + 1) - m(m + 1)}\matrixel{l^{\prime}m^{\prime}}{\op{L}{+}}{l m+1}\\
+			                                                                         + \hbar\sqrt{l(l + l) - m(m - 1)}\matrixel{l^{\prime}m^{\prime}}{\op{L}{+}}{l m-1}\\
+			                                                                         +
+			                                                                         \hbar\sqrt{l(l + 1) - m(m + 1)}\matrixel{l^{\prime}m^{\prime}}{\op{L}{-}}{l m+1}\\
+			                                                                         + \hbar\sqrt{l(l + 1) - m(m - 1)}\matrixel{l^{\prime}m^{\prime}}{\op{L}{-}}{l m-1}\Biggr]
+		                                                                         \end{multlined},                                                              \\
+		                                                  & = \dfrac{1}{4}\Biggl[\begin{multlined}[t]
+			                                                                         \hbar^{2}\sqrt{l(l + 1) - m(m + 1)}\sqrt{l(l + 1) - (m + 1)(m + 1 + 1)}\braket{l^{\prime}m^{\prime}}{l m+2}\\
+			                                                                         + \hbar^{2}\sqrt{l(l + l) - m(m - 1)}\sqrt{l(l + 1) - (m - 1)(m - 1 + 1)}\braket{l^{\prime}m^{\prime}}{l m}\\
+			                                                                         +
+			                                                                         \hbar^{2}\sqrt{l(l + 1) - m(m + 1)}\sqrt{l(l + 1) - (m + 1)(m + 1 - 1)}\braket{l^{\prime}m^{\prime}}{l m}\\
+			                                                                         + \hbar^{2}\sqrt{l(l + 1) - m(m - 1)}\sqrt{l(l + 1) - (m - 1)(m - 1 - 1)}\braket{l^{\prime}m^{\prime}}{l m-2}\Biggr]
+		                                                                         \end{multlined},                                   \\
+		                                                  & = \dfrac{\hbar^{2}}{4}\Biggl[\begin{multlined}[t]
+			                                                                                 \sqrt{l(l + 1) - m(m + 1)}\sqrt{l(l + 1) - (m + 1)(m + 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m+2}\\
+			                                                                                 + \sqrt{l(l + 1) - m(m - 1)}\sqrt{l(l + 1) - (m - 1)(m - 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m+2}\\
+			                                                                                 +
+			                                                                                 \Biggl(l(l + l) - m(m - 1) + l(l + 1) - m(m + 1)\Biggr)\delta_{l^{\prime}l}\delta_{m^{\prime}m}
+			                                                                                 \Biggr]
+		                                                                                 \end{multlined}, \\
+		                                                  & = \dfrac{\hbar^{2}}{4}\Biggl[\begin{multlined}[t]
+			                                                                                 \sqrt{l(l + 1) - m(m + 1)}\sqrt{l(l + 1) - (m + 1)(m + 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m+2}\\
+			                                                                                 + \sqrt{l(l + 1) - m(m - 1)}\sqrt{l(l + 1) - (m - 1)(m - 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m-2}\\
+			                                                                                 +
+			                                                                                 \Biggl(2l(l + 1) - 2m^{2}\Biggr)\delta_{l^{\prime}l}\delta_{m^{\prime}m}
+			                                                                                 \Biggr].
+		                                                                                 \end{multlined}
+	\end{align*}
+
+	\pagebreak
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{x}{2}}{lm} = \dfrac{\hbar^{2}}{4}\Biggl[\begin{multlined}[t]
+			\sqrt{l(l + 1) - m(m + 1)}\sqrt{l(l + 1) - (m + 1)(m + 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m+2}\\
+			+ \sqrt{l(l + 1) - m(m - 1)}\sqrt{l(l + 1) - (m - 1)(m - 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m-2}\\
+			+
+			2\Bigl(l(l + 1) - m^{2}\Big)\delta_{l^{\prime}l}\delta_{m^{\prime}m}
+			\Biggr]
+		\end{multlined}.
+	\end{empheq}
+
+	\section*{Inciso (b)}
+
+	Para el valor esperado de \(\op{L}{y}{2}\) tenemos
+
+	\begin{align*}
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{y}{2}}{lm} & =
+		\matrixel`*{l^{\prime}m^{\prime}}{\Bigl(\dfrac{1}{2i}(\op{L}{+} - \op{L}{-})\Bigr)^{2}}{lm},                                                   \\
+		                                                  & = \matrixel`*{l^{\prime}m^{\prime}}{\dfrac{-1}{4}\Bigl(\op{L}{+}{2} - \op{L}{+}\op{L}{-} -
+		\op{L}{-}\op{L}{+} + \op{L}{-}{2}\Bigr)}{lm},                                                                                                  \\
+		                                                  & = \dfrac{1}{4}\Biggl[-\matrixel{l^{\prime}m^{\prime}}{\op{L}{+}{2}}{lm} +
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{+}\op{L}{-}}{lm} + \matrixel{l^{\prime}m^{\prime}}{\op{L}{-}\op{L}{+}}{lm}
+		- \matrixel{l^{\prime}m^{\prime}}{\op{L}{-}{2}}{lm}\Biggr]
+	\end{align*}
+
+	Por el inciso anterior tenemos que el valor esperado de \(\op{L}{y}{2}\) es
+
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{x}{2}}{lm} = \dfrac{\hbar^{2}}{4}\Biggl[\begin{multlined}[t]
+			2\Bigl(l(l + 1) - m^{2}\Big)\delta_{l^{\prime}l}\delta_{m^{\prime}m}\\
+			- \sqrt{l(l + 1) - m(m + 1)}\sqrt{l(l + 1) - (m + 1)(m + 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m+2}\\
+			- \sqrt{l(l + 1) - m(m - 1)}\sqrt{l(l + 1) - (m - 1)(m - 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m-2}
+			\Biggr].
+		\end{multlined}
+	\end{empheq}
+
+	\pagebreak
+	\section*{Inciso (c)}
+
+	Por los incisos anteriores, tenemos que
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{+}{2}}{lm} = \sqrt{l(l + 1) - m(m + 1)}\sqrt{l(l + 1) - (m + 1)(m + 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m+2}.
+	\end{empheq}
+
+	\section*{Inciso (d)}
+
+	Por los incisos anteriores, tenemos que
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\matrixel{l^{\prime}m^{\prime}}{\op{L}{-}{2}}{lm} =
+		- \sqrt{l(l + 1) - m(m - 1)}\sqrt{l(l + 1) - (m - 1)(m - 2)}\delta_{l^{\prime}l}\delta_{m^{\prime}m-2}
+	\end{empheq}
 \end{problema}
 \end{document}
