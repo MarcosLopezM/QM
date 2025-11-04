@@ -1,0 +1,59 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setproblem{17}
+\begin{problema}[60]
+	En clase vimos que el momento angular puede ser expresado en coordenadas
+	cartesianas como:
+
+	\begin{equation*}
+		\op{L}{k} = i \epsilon_{ijk} \op{r}{i}\op{p}{j}
+	\end{equation*}
+
+	donde \(\op{r}{i}\) es una componente del vector de posición y
+	\(\op{p}{j} = \tfrac{\hbar}{i}\pdv{f}{r_{j}}\) es una componente del
+	momentum. Teniendo en cuenta que en coordenadas esféricas las componentes
+	del vector de posición son:
+
+	\begin{alignat*}{3}
+		x & = r \sin\theta\cos\phi,\qquad y & {}={}       & r\sin\theta\sin\phi,\qquad \text{y}\qquad
+		z & {}={}                           & r\cos\theta
+	\end{alignat*}
+
+	muestre que
+
+	\begin{enumerate}
+		\item usando regla de la cadena se puede verificar la siguiente igualdad
+
+		      \begin{equation*}
+			      \op{L}{z} = -i\hbar\pdv{}{\phi}.
+		      \end{equation*}
+		\item Análogamente, con el uso de la regla de la cadena, verifique
+		      que la igualdad
+
+		      \begin{equation*}
+			      \hbar\pdv{}{\theta} = i \Biggl(- \op{L}{x}\sin\phi + \op{L}{y}\cos\phi\Biggr).
+		      \end{equation*}
+
+		\item Verifique que la siguiente igualdad es correcta
+
+		      \begin{equation*}
+			      \dotprod{\op{\vect{r}}}{\op{\vect{L}}} = 0.
+		      \end{equation*}
+		\item Con las ecuaciones de los incisos anteriores, determine
+		      \(\op{L}{x}\) y \(\op{L}{y}\) en coordenadas esféricas.
+
+		\item Escriba la forma explícita de los operadores
+		      \(\op{L}{\pm}\) en coordenadas esféricas.
+		\item Usando la identidad \(\op{\vect{L}}{}{2} = \op{L}{+}\op{L}{-} + \op{L}{3}{2} -
+		      \hbar\op{L}{3}\), corrobore que este operador en coordenadas esféricas tiene
+		      la forma
+
+		      \begin{equation*}
+			      \op{\vect{L}}{}{2} = -\hbar^{2} \Biggl\lbrace \dfrac{1}{\sin^{2}\theta}
+			      \pdv[order=2]{}{\phi} + \dfrac{1}{\sin\theta}\pdv{}{\theta}
+			      \Biggl(\sin\theta\pdv{}{\theta}\Biggr)\Biggr\rbrace.
+		      \end{equation*}
+	\end{enumerate}
+\end{problema}
+\end{document}

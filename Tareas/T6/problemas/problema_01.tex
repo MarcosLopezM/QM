@@ -1,0 +1,38 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setproblem{16}
+\begin{problema}[30]
+	En clase encontramos que los electrones pueden tener momento angular intrínseco,
+	el cual se denomina espín. En clase vimos que el espín puede ser representado por
+	tres matrices:
+
+	\begin{alignat*}{3}
+		\sigma_{x} & = \begin{pNiceMatrix}
+			               0 & 1 \\
+			               1 & 0 \\
+		               \end{pNiceMatrix},\qquad
+		\sigma_{y} & {}={}                    & \begin{pNiceMatrix}
+			                                        0 & -i \\
+			                                        i & 0  \\
+		                                        \end{pNiceMatrix},\qquad
+		\sigma_{z} & {}={}                    &
+		\begin{pNiceMatrix}
+			1 & 0  \\
+			0 & -1 \\
+		\end{pNiceMatrix},
+	\end{alignat*}
+
+	conocidas como las matrices de Pauli. El problema consiste en verificar que las
+	matrices de Pauli cumplen:
+
+	\begin{enumerate}
+		\item \(\sigma_{x}^{2} = 1,\sigma_{y}^{2} = 1 \) y\(\sigma_{z}^{2} = 1\)
+		\item \([\sigma_{i}, \sigma_{j}] = 2i l\epsilon_{i j k} \sigma _{k}\) (asigne
+		      valores para \(i, j\) y \(k\))
+		\item \({\sigma_{i}, \sigma_{j}} = 2i\delta_{ij}\) (asigne
+		      valores para \(i, j\) y \(k\)), donde \({A, B} \equiv AB + BA\)
+		      se denomina anticonmutador.
+	\end{enumerate}
+\end{problema}
+\end{document}
