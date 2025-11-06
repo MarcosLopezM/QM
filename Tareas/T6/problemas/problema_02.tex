@@ -55,5 +55,305 @@
 			      \Biggl(\sin\theta\pdv{}{\theta}\Biggr)\Biggr\rbrace.
 		      \end{equation*}
 	\end{enumerate}
+
+	\startsolution
+
+	Tenemos que la regla de transformación general es
+
+	\begin{equation}
+		\pdv{}{r_{i}} = \pdv{}{x}\pdv{x}{r_{i}} + \pdv{}{y}\pdv{y}{r_{i}} +
+		\pdv{}{z}\pdv{z}{r_{i}}.
+		\label{eq:transformation}
+	\end{equation}
+
+	\pagebreak
+	Entonces, para \(\pdv{}{\phi}\),
+
+	\begin{align}
+		\pdv{}{\phi}            & = \pdv{x}{\phi}\pdv{}{x} + \pdv{y}{\phi}\pdv{}{y} + \pdv{z}{\phi}\pdv{}{z},\nonumber \\
+		                        & = \pdv*{(r\sin\theta\cos\phi)}{\phi}\pdv{}{x} +
+		\pdv*{(r\sin\theta\sin\phi)}{\phi}\pdv{}{y} +
+		\pdv*{(r\cos\theta)}{\phi}\pdv{}{z},\nonumber                                                                  \\
+		                        & = -r\sin\theta\sin\phi\pdv{}{x} + r\sin\theta\cos\phi\pdv{}{y},\nonumber             \\
+		                        & = -y\pdv{}{x} + x\pdv{}{y},\nonumber                                                 \\
+		\Aboxedsec{\pdv{}{\phi} & = x\pdv{}{y} - y\pdv{}{x}.}\label{eq:pdvphi}
+	\end{align}
+
+	Si calculamos \(\op{L}{z}\) usando \(\op{L}{k} = \epsilon_{ijk}\op{r}{i}\op{p}{j}\),
+	tenemos que
+
+	\begin{align}
+		\op{L}{z}            & = \epsilon_{ijz}\op{r}{i}\op{p}{j},\nonumber                            \\
+		                     & = \epsilon_{xjz}\op{r}{x}\op{p}{j} + \epsilon_{yjz}\op{r}{y}\op{p}{j} +
+		\epsilon_{zjz}\op{r}{z}\op{p}{j},\nonumber                                                     \\
+		                     & = \epsilon_{xxz}\op{r}{x}\op{p}{x} + \epsilon_{xyz}\op{r}{x}\op{p}{y} +
+		\epsilon_{xzz}\op{r}{x}\op{p}{z} + \epsilon_{yxz}\op{r}{y}\op{p}{x} +
+		\epsilon_{yyz}\op{r}{y}\op{p}{y} + \epsilon_{yzz}\op{r}{y}\op{p}{z},\nonumber                  \\
+		\Aboxedsec{\op{L}{z} & = \dfrac{\hbar}{i}\biggl(x\pdv{}{y} - y\pdv{}{x}\biggr).}
+		\label{eq:Lz-cartesianas}
+	\end{align}
+
+	Sustituyendo la \zcref{eq:pdvphi} en la \zcref{eq:Lz-cartesianas}, obtenemos que
+
+	\begin{align}
+		\op{L}{z}             & = \dfrac{\hbar}{i}\pdv{}{\phi},\nonumber       \\
+		\Aboxedmain{\op{L}{z} & = -i\hbar\pdv{}{\phi}.}\label{eq:Lz-spherical}
+	\end{align}
+
+	\section*{Inciso (b)}
+
+	De la \zcref{eq:transformation} tenemos que el LHS queda como:
+
+	\begin{align}
+		\hbar \pdv{}{\theta} & = \hbar \Biggl[\pdv{x}{\theta}\pdv{}{x} +
+		\pdv{y}{\theta}\pdv{}{y} + \pdv{z}{\theta}\pdv{}{z}\Biggr],\nonumber                  \\
+		                     & = \hbar \Biggl[\pdv*{(r\sin\theta\cos\phi)}{\theta}\pdv{}{x} +
+			\pdv*{(r\sin\theta\sin\phi)}{\theta}\pdv{}{y} +
+		\pdv*{(r\cos\theta)}{\theta}\pdv{}{z}\Biggr],\nonumber                                \\
+		                     & = \hbar \Biggl[r\cos\theta\cos\phi\pdv{}{x} +
+		r\cos\theta\sin\phi\pdv{}{y} - r\sin\theta\pdv{}{z}\Biggr],\nonumber                  \\
+		                     & = \hbar \Biggl[r\cos\theta \Biggl(\cos\phi\pdv{}{x} +
+			\sin\phi\pdv{}{y}\Biggr) -
+			r\sin\theta\pdv{}{z}\Biggr].
+		\label{eq:hbar-pdvtheta}
+	\end{align}
+
+	Ahora, para el RHS, primero encontramos las expresiones para \(\op{L}{x}\) y
+	\(\op{L}{y}\) en coordenadas cartesianas,
+
+	\begin{align}
+		\op{L}{x}            & = \epsilon_{ijx}\op{r}{i}\op{p}{j},\nonumber                                    \\
+		                     & = \epsilon_{xjx}\op{r}{x}\op{p}{j} + \epsilon_{yjx}\op{r}{y}\op{p}{j} +
+		\epsilon_{zjx}\op{r}{z}\op{p}{j},\nonumber                                                             \\
+		                     & = \epsilon_{yzx}\op{r}{y}\op{p}{z} + \epsilon_{zyx}\op{r}{z}\op{p}{y},\nonumber \\
+		                     & = \epsilon_{yzx}y \Bigl(\dfrac{\hbar}{i}\pdv{}{z}\Bigr) +
+		\epsilon_{zyx}z \Bigl(\dfrac{\hbar}{i}\pdv{}{y}\Bigr),\nonumber                                        \\
+		\Aboxedsec{\op{L}{x} & = \dfrac{\hbar}{i}\Biggl(y\pdv{}{z} - z\pdv{}{y}\Biggr)}.
+		\label{eq:Lx-cartesian}
+	\end{align}
+
+	Análogamente,
+
+	\begin{align}
+		\op{L}{y}            & = \epsilon_{ijy}\op{r}{i}\op{p}{j},\nonumber                                    \\
+		                     & = \epsilon_{xzy}\op{r}{x}\op{p}{z} + \epsilon_{zxy}\op{r}{z}\op{p}{x},\nonumber \\
+		\Aboxedsec{\op{L}{y} & = \dfrac{\hbar}{i}\Bigl(z\pdv{}{x} - x\pdv{}{z}\Bigr).}
+		\label{eq:Ly-cartesian}
+	\end{align}
+
+	Así,
+
+	\begin{align*}
+		RHS & = \hbar \Biggl[-\Biggl(r\sin\theta\sin\phi\pdv{}{z} - r\cos\theta\pdv{}{y}\Biggr)\sin\phi +
+		\Biggl(r\cos\theta\pdv{}{x} - r\sin\theta\cos\phi\pdv{}{z}\Biggr)\cos\phi\Biggr],                 \\
+		    & = \hbar \Biggl[-r\sin\theta(\sin^{2}\phi + \cos^{2}\phi)\pdv{}{z} +
+		r\cos\theta \Bigl(\sin\phi\pdv{}{y} + \cos\phi\pdv{}{x}\Bigr)\Biggr],                             \\
+		    & = \hbar \Biggl[r\cos\theta \Bigl(\cos\phi\pdv{}{y} + \sin\phi\pdv{}{y}\Bigr) -
+			r\sin\theta\pdv{}{z}\Biggr].
+	\end{align*}
+
+	Por lo tanto, la igualdad se satisface.
+
+	\section*{Inciso (c)}
+
+	Desarrollando \(\dotprod{\op{\vect{r}}}{\op{\vect{L}}}\),
+
+	\begin{align*}
+		\dotprod{\op{\vect{r}}}{\op{\vect{L}}}             & = (x, y, z)\cdot (\op{L}{x}, \op{L}{y}, \op{L}{z}),                                         \\
+		                                                   & = (r\sin\theta\cos\phi, r\sin\theta\sin\phi, r\cos\theta)(\op{L}{x}, \op{L}{y}, \op{L}{z}), \\
+		                                                   & = r\sin\theta\cos\phi \Biggl[\dfrac{\hbar}{i}\Biggl(y\pdv{}{z} - z\pdv{}{y}\Biggr)\Biggr]
+		+ r\sin\theta\sin\phi \Biggl[\dfrac{\hbar}{i}\Biggl(z\pdv{}{x} - x\pdv{}{z}\Biggr)\Biggr]
+		+ r\cos\theta \Biggl[\dfrac{\hbar}{i}\Biggl(x\pdv{}{y} - y\pdv{}{x}\Biggr)\Biggr],                                                               \\
+		                                                   & = \dfrac{\hbar}{i}\Biggl[
+		\begin{multlined}[t]
+			r^{2}\sin^{2}\theta\sin\phi\cos\phi\pdv{}{z} +
+			r^{2}\sin\theta\sin\phi\cos\theta\pdv{}{x} +
+			r^{2}\sin\theta\cos\phi\cos\theta\pdv{}{y}\\
+			- r^{2}\sin\theta\cos\phi\cos\theta\pdv{}{y}
+			- r^{2}\sin^{2}\theta\sin\phi\cos\phi\pdv{}{z}
+			- r^{2}\cos\theta\sin\theta\sin\phi\pdv{}{x}\Biggr],
+		\end{multlined}                                                                                              \\
+		\Aboxedmain{\dotprod{\op{\vect{r}}}{\op{\vect{L}}} & = 0.}
+	\end{align*}
+
+	\section*{Inciso (d)}
+
+	Del inciso (b) tenemos
+
+	\begin{equation}
+		- \op{L}{x}\sin\phi + \op{L}{y}\cos\phi = -i\hbar\pdv{}{\theta}.
+		\label{eq:lx-ly-pdvtheta}
+	\end{equation}
+
+	Mientras que de (c),
+
+	\begin{align*}
+		r\sin\theta\cos\phi \op{L}{x} + r\sin\theta\sin\phi \op{L}{y} + r\cos\theta \op{L}{z} & = 0, \\
+		\sin\theta\cos\phi \op{L}{x} + \sin\theta\sin\phi \op{L}{y} + \cos\phi \op{L}{z}      & = 0.
+	\end{align*}
+
+	Sustituyendo \(\op{L}{z} = -i \hbar \pdv{}{\phi}\),
+
+	\begin{align}
+		\sin\theta\sin\phi \op{L}{x} + \sin\theta\sin\phi \op{L}{y} & = -\cos\theta \Bigl(-i\hbar\pdv{}{\phi}\Bigr),\nonumber \\
+		\sin\theta\cos\phi \op{L}{x} + \sin\theta\sin\phi \op{L}{y} & = i\hbar\cos\theta\pdv{}{\phi}.
+		\label{eq:lxly-pdvphi}
+	\end{align}
+
+	\pagebreak
+	Las \zcref{eq:lx-ly-pdvtheta,eq:lxly-pdvphi} forma un
+	sistema de ecuaciones. Restando la \zcref{eq:lx-ly-pdvtheta} de la
+	\zcref{eq:lxly-pdvphi}, multiplicando la primera por \(\sin\theta\sin\phi\) y
+	la segunda por \(\cos\phi\),
+
+	\begin{align*}
+		\bigl(\sin\theta\cos^{2}\phi + \sin\theta\sin^{2}\phi\bigr)\op{L}{x} +
+		\bigl(\sin\theta\sin\phi\cos\phi - \sin\theta\sin\phi\cos\phi\bigr)\op{L}{y} & =
+		i\hbar \Biggl(\cos\theta\cos\phi\pdv{}{\phi} + \sin\theta\sin\phi\pdv{}{\theta}\Biggr),                                           \\
+		\sin\theta \bigl(\cos^{2}\phi + \sin^{2}\phi\bigr)\op{L}{x}                  & = i\hbar \Biggl(\cos\phi\cos\theta\pdv{}{\phi} +
+		\sin\theta\sin\phi\pdv{}{\theta}\Biggr),                                                                                          \\
+		\sin\theta \op{L}{x}                                                         & = i\hbar \Biggl(\sin\theta\sin\phi\pdv{}{\theta} +
+		\cos\theta\cos\phi\pdv{}{\phi}\Biggr).
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation}
+		\op{L}{x} = i\hbar \Biggl(\sin\phi\pdv{}{\theta} + \dfrac{\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr).
+		\label{eq:lx-spherical}
+	\end{empheq}
+
+	Sustituyendo este resultado en la \zcref{eq:lx-ly-pdvtheta},
+
+	\begin{align*}
+		-\Biggl[i\hbar \Biggl(\sin\phi\pdv{}{\theta} + \dfrac{\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr)\Biggr]\sin\phi +
+		\op{L}{y}\cos\phi & = -i\hbar\pdv{}{\theta},                           \\
+		-i\hbar \Biggl[\sin^{2}\phi\pdv{}{\theta} + \dfrac{\sin\phi\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr] +
+		\op{L}{y}\cos\phi & = -i\hbar\pdv{}{\theta},                           \\
+		\op{L}{y}\cos\phi & = i\hbar \Biggl[(\sin^{2}\phi - 1)\pdv{}{\theta} +
+			\dfrac{\sin\phi\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr].
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation}
+		\op{L}{y} = i\hbar \Biggl(-\cos\phi\pdv{}{\theta} + \dfrac{\sin\phi}{\tan\theta}\pdv{}{\phi}\Biggr).
+		\label{eq:Ly-spherical}
+	\end{empheq}
+
+	\section*{Inciso (e)}
+
+	Sabemos que la definición de los operadores de ascenso y descenso de
+	momento angular es
+
+	\begin{equation*}
+		\op{L}{\pm} = \op{L}{x} \pm i \op{L}{y}.
+	\end{equation*}
+
+	Entonces,
+
+	\begin{align*}
+		\op{L}{+} & = i\hbar \Biggl(\sin\phi\pdv{}{\theta} + \dfrac{\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr) +
+		i \Biggl(i \Biggl(-\cos\phi\pdv{}{\theta} + \dfrac{\sin\phi}{\tan\theta}\pdv{}{\phi}\Biggr)\Biggr),                     \\
+		          & = \hbar \Biggl(\cos\phi\pdv{}{\theta} + i\sin\phi\pdv{}{\theta} -
+		\dfrac{\sin\phi}{\tan\theta}\pdv{}{\phi} + i \dfrac{\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr),                           \\
+		          & = \hbar \Bigl(\cos\phi + i\sin\phi\Bigr)\Biggl(\pdv{}{\theta} + i \dfrac{1}{\tan\theta}\pdv{}{\phi}\Biggr).
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation}
+		\op{L}{+} = \hbar \mathrm{e}^{i\phi}\Biggl(\pdv{}{\theta} + i \dfrac{1}{\tan\theta}\pdv{}{\phi}\Biggr).
+		\label{eq:L+spherical}
+	\end{empheq}
+
+	Mientras que \(\op{L}{-}\),
+
+	\begin{align*}
+		\op{L}{-} & = i\hbar \Biggl(\sin\phi\pdv{}{\theta} + \dfrac{\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr) -
+		i \Biggl(i\hbar \Biggl(-\cos\phi\pdv{}{\theta} + \dfrac{\sin\phi}{\tan\theta}\pdv{}{\phi}\Biggr)\Biggr),                 \\
+		          & = \hbar \Biggl(-\cos\phi\pdv{}{\theta} + i\sin\phi\pdv{}{\theta} +
+		\dfrac{\sin\phi}{\tan\theta}\pdv{}{\phi} + i\dfrac{\cos\phi}{\tan\theta}\pdv{}{\phi}\Biggr),                             \\
+		          & = \hbar \Bigl(\cos\phi - i\sin\phi\Bigr)\Biggl(-\pdv{}{\theta} + i \dfrac{1}{\tan\theta}\pdv{}{\phi}\Biggr).
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation}
+		\op{L}{-} = \hbar\mathrm{e}^{-i\phi}\Biggl(-\pdv{}{\theta} + i \dfrac{1}{\tan\theta}\pdv{}{\phi}\Biggr).
+		\label{eq:L-spherical}
+	\end{empheq}
+
+	\section*{Inciso (f)}
+
+	Calculamos \(\op{L}{+}\op{L}{-}\) usando las \zcref{eq:L+spherical,eq:L-spherical}
+
+	\begin{align}
+		\op{L}{+}\op{L}{-} & = \hbar \mathrm{e}^{i\phi}\Biggl(\pdv{}{\theta} + i \dfrac{1}{\tan\theta}\pdv{}{\phi}\Biggr)\Biggl[-\mathrm{e}^{-i\phi}\pdv{}{\theta} + i\mathrm{e}^{-i\phi} \dfrac{1}{\tan\theta}\pdv{}{\phi}\Biggr],\nonumber \\
+		                   & = \hbar^{2} \mathrm{e}^{i\phi}\Biggl\lbrace \begin{multlined}[t]
+			                                                                 -\mathrm{e}^{-i\phi}\pdv[order=2]{}{\theta}
+			                                                                 - i\csc^{2}\theta \mathrm{e}^{-i\phi}\pdv{}{\phi} +
+			                                                                 i\dfrac{1}{\tan\theta}\mathrm{e}^{-i\phi}\pdv{}{\theta,\phi} \\
+			                                                                 + \dfrac{i}{\tan\theta}\Biggl[
+				                                                                 i \mathrm{e}^{-i\phi}\pdv{}{\theta} - \mathrm{e}^{-i\phi}\pdv{}{\phi,\theta} +
+				                                                                 \dfrac{i}{\tan\theta}\Biggl(-i \mathrm{e}^{-i\phi}\pdv{}{\phi} + \mathrm{e}^{-i\phi}\pdv[order=2]{}{\phi} \Biggr)\Biggr]\Biggr\rbrace,
+		                                                                 \end{multlined},\nonumber                                                                  \\
+		                   & = \hbar^{2}\Biggl\lbrace  -\pdv[order=2]{}{\theta} -
+		i\csc^{2}\theta\pdv{}{\phi} - \dfrac{1}{\tan\theta}\pdv{}{\theta} +
+		\dfrac{i}{\tan^{2}\theta}\pdv{}{\phi} -
+		\dfrac{1}{\tan^{2}\theta}\pdv[order=2]{}{\phi}\Biggr\rbrace,\nonumber                                                                                                                                                                \\
+		                   & = -\hbar^{2}\Biggl\lbrace \pdv[order=2]{}{\theta} +
+		i \Biggl(\dfrac{1}{\sin^{2}\theta} - \dfrac{\cos^{2}\theta}{\sin^{2}\theta}\Biggr)\pdv{}{\theta} +
+		\dfrac{1}{\tan\theta}\pdv{}{\theta} +
+		\dfrac{1}{\tan^{2}\theta}\pdv[order=2]{}{\phi}\Biggr\rbrace,\nonumber                                                                                                                                                                \\
+		\op{L}{+}\op{L}{-} & = -\hbar^{2}\Biggl\lbrace \pdv[order=2]{}{\theta} + i\pdv{}{\phi} +
+		\dfrac{1}{\tan\theta}\pdv{}{\theta} + \dfrac{1}{\tan^{2}\theta}\pdv[order=2]{}{\phi}\Biggr\rbrace.
+		\label{eq:LxL-product}
+	\end{align}
+
+	De \(\op{L}{z} = -i\hbar\pdv{}{\phi}\), \(\op{L}{z}{2} = -h^{2}\pdv[order=2]{}{\phi}\)
+	y de la \zcref{eq:LxL-product} tenemos
+
+	\begin{align*}
+		\op{\vect{L}}{}{2} & = -\hbar^{2}\Biggl\lbrace
+		\pdv[order=2]{}{\theta} + i\pdv{}{\phi} +
+		\dfrac{1}{\tan\theta}\pdv{}{\theta} + \dfrac{1}{\tan^{2}\theta}\pdv[order=2]{}{\phi}\Biggr\rbrace
+		- \hbar^{2}\pdv[order=2]{}{\phi} + i\hbar^{2}\pdv{}{\phi},                               \\
+		                   & = -\hbar^{2}\Biggl\lbrace \pdv[order=2]{}{\theta} + i\pdv{}{\phi} -
+		i\pdv{}{\phi} + \dfrac{1}{\tan\theta}\pdv{}{\theta} +
+		\unbr{\Biggl(1 + \dfrac{1}{\tan^{2}\theta}\Biggr)}_{(A)}\pdv[order=2]{}{\phi} \Biggr\rbrace.
+	\end{align*}
+
+	Desarrollando (A),
+
+	\begin{align*}
+		1 + \dfrac{1}{\tan^{2}\theta} & = \dfrac{\tan^{2}\theta + 1}{\tan^{2}\theta},                      \\
+		                              & = \dfrac{\sec^{2}\theta}{\tan^{2}\theta},                          \\
+		                              & = \dfrac{1}{\cos^{2}\theta}\dfrac{\cos^{2}\theta}{\sin^{2}\theta}, \\
+		                              & = \dfrac{1}{\sin^{2}\theta}.
+	\end{align*}
+
+	Entonces,
+
+	\begin{equation*}
+		\op{\vect{L}}{}{2} = -\hbar^{2}\Biggl\lbrace \unbr{\pdv[order=2]{}{\theta} + \dfrac{1}{\tan\theta}\pdv{}{\theta}}_{(B)} +
+		\dfrac{1}{\sin^{2}\theta}\pdv[order=2]{}{\phi} \Biggr\rbrace.
+	\end{equation*}
+
+	Escribiendo (B) como la derivada de un producto, i.e.
+
+	\begin{align*}
+		\dfrac{1}{\sin\theta}\pdv*{\Biggl(\sin\theta\pdv{}{\theta}\Biggr)}{\theta} & =
+		\dfrac{1}{\sin\theta}\Biggl(\cos\theta\pdv{}{\theta} + \sin\theta\pdv[order=2]{}{\theta}\Biggr),                                              \\
+		                                                                           & = \dfrac{1}{\tan\theta}\pdv{}{\theta} + \pdv[order=2]{}{\theta}.
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\op{\vect{L}}{}{2} = -\hbar^{2}\Biggl\lbrace \dfrac{1}{\sin^{2}\theta}\pdv[order=2]{}{\phi} +
+		\dfrac{1}{\sin\theta}\pdv*{\Biggl(\sin\theta\pdv{}{\theta}\Biggr)}{\theta}
+		\Biggr\rbrace.
+	\end{empheq}
 \end{problema}
 \end{document}
