@@ -10,10 +10,14 @@
 \semester{2026--1}
 \subject{Mecánica Cuántica}
 
+\makeatletter
+\renewcommand\@seccntformat[1]{}
+\makeatother
+
 \begin{document}
 \maketitle
 
-  \subfile{problemas/problema_01.tex}
-  \subfileinclude{problemas/problema_02.tex}
+\subfile{problemas/problema_01.tex}
+\subfileinclude{problemas/problema_02.tex}
 
 \end{document}
