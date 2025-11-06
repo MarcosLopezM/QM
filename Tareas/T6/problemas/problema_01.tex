@@ -34,5 +34,118 @@
 		      valores para \(i, j\) y \(k\)), donde \({A, B} \equiv AB + BA\)
 		      se denomina anticonmutador.
 	\end{enumerate}
+
+	\section*{Inciso (a)}
+
+	Calculamos el producto de cada matriz consigo misma, empezando por \(\sigma_{x}\),
+
+	\begin{align*}
+		\sigma_{x}^{2}             & = \begin{pNiceMatrix}
+			                               0 & 1 \\
+			                               1 & 0
+		                               \end{pNiceMatrix}\begin{pNiceMatrix}
+			                                                0 & 1 \\
+			                                                1 & 0
+		                                                \end{pNiceMatrix}, \\
+		                           & = \begin{pNiceMatrix}
+			                               0 + 1 & 0     \\
+			                               0     & 1 + 0 \\
+		                               \end{pNiceMatrix},                  \\
+		                           & = \begin{pNiceMatrix}
+			                               1 & 0 \\
+			                               0 & 1 \\
+		                               \end{pNiceMatrix},                  \\
+		\Aboxedmain{\sigma_{x}^{2} & = 1.}
+	\end{align*}
+
+	Para \(\sigma_{y}^{2}\),
+
+	\begin{align*}
+		\sigma_{y}^{2}             & = \begin{pNiceMatrix}
+			                               0 & -i \\
+			                               i & 0
+		                               \end{pNiceMatrix}\begin{pNiceMatrix}
+			                                                0 & -i \\
+			                                                i & 0
+		                                                \end{pNiceMatrix}, \\
+		                           & = \begin{pNiceMatrix}
+			                               0 - i(i) & 0         \\
+			                               0        & i(-i) + 0 \\
+		                               \end{pNiceMatrix},                \\
+		                           & = \begin{pNiceMatrix}
+			                               1 & 0 \\
+			                               0 & 1 \\
+		                               \end{pNiceMatrix},                  \\
+		\Aboxedmain{\sigma_{y}^{2} & = 1.}
+	\end{align*}
+
+	Finalmente, para \(\sigma_{z}^{2}\),
+
+	\begin{align*}
+		\sigma_{z}^{2}             & = \begin{pNiceMatrix}
+			                               1 & 0  \\
+			                               0 & -1
+		                               \end{pNiceMatrix}\begin{pNiceMatrix}
+			                                                1 & 0  \\
+			                                                0 & -1
+		                                                \end{pNiceMatrix}, \\
+		                           & = \begin{pNiceMatrix}
+			                               1 + 0 & 0         \\
+			                               0     & 0 - 1(-1) \\
+		                               \end{pNiceMatrix},                  \\
+		\Aboxedmain{\sigma_{z}^{2} & = 1.}
+	\end{align*}
+
+	\section*{Inciso (b)}
+
+	Calculamos los elementos necesarios para el conmutador,
+
+	\begin{alignat*}{3}
+		\sigma_{x}\sigma_{y} & = i\sigma_{z},\quad \sigma_{x}\sigma_{z}  & {}={} & -i\sigma_{y},\qquad \sigma_{y}\sigma_{z} & {}={} & i\sigma_{x}, \\
+		\sigma_{y}\sigma_{x} & = -i\sigma_{z}\qquad \sigma_{z}\sigma_{x} & {}={} & i\sigma_{y},\qquad \sigma_{z}\sigma_{y}  & {}={} & -i\sigma_{x}
+	\end{alignat*}
+
+	Recordando la definición del conmutador,
+
+	\begin{equation}
+		[\sigma_{i}, \sigma_{j}] = \sigma_{i}\sigma_{j} - \sigma_{j}\sigma_{i}.
+	\end{equation}
+
+	Así notamos que
+
+	\begin{alignat*}{2}
+		[\sigma_{x}, \sigma_{y}] & = 2i\sigma_{z},\quad [\sigma_{y}, \sigma_{x}]  & {}={} & -2i\sigma_{z}, \\
+		[\sigma_{x}, \sigma_{z}] & = -2i\sigma_{y},\quad [\sigma_{z}, \sigma_{x}] & {}={} & 2i\sigma_{y},  \\
+		[\sigma_{y}, \sigma_{z}] & = 2i\sigma_{x},\quad [\sigma_{z}, \sigma_{y}]  & {}={} & -2i\sigma_{x}.
+	\end{alignat*}
+
+	Es decir, que cuando calculamos el conmutador permutado el signo cambia, por
+	lo que podemos escribir los conmutadores anteriores como:
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		[\sigma_{i}, \sigma_{j}] = 2i \epsilon_{ijk}\sigma_{k}.
+	\end{empheq}
+
+	\section*{Inciso (c)}
+
+	Mientras que para el anticonmutador, de los productos de matrices de Pauli, que para
+	\(i \neq j\),
+
+	\begin{equation*}
+		\bigl\lbrace \sigma_{i}, \sigma_{j} \bigr\rbrace = 0.
+	\end{equation*}
+
+	Sin embargo, para considerar los casos en lo que \(i = j\), de los resultados
+	del inciso (a) y la definición del anticonmutador, tenemos que
+
+	\begin{equation*}
+		\bigl\lbrace \sigma_{i}, \sigma_{j} \bigr\rbrace = 2.
+	\end{equation*}
+
+	Así,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\bigl\lbrace \sigma_{i}, \sigma_{j} \bigr\rbrace = 2 \delta_{ij}.
+	\end{empheq}
 \end{problema}
 \end{document}
