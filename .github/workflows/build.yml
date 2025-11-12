@@ -67,7 +67,7 @@ jobs:
       relative_path: Tareas/T6
       tex_name: main
       out_name: "Tarea6"
-      send_it: true
+      # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
 
@@ -87,6 +87,16 @@ jobs:
       relative_path: Examenes/E1
       tex_name: main
       out_name: "ExamenParcial1"
+      # send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
+
+  build-examen-2:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Examenes/E2
+      tex_name: main
+      out_name: "ExamenParcial2"
       # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
