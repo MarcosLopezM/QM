@@ -1,0 +1,28 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setproblem{18}
+\begin{problema}
+	Usando la ecuación radial:
+
+	\begin{equation*}
+		-\dfrac{\hbar^{2}}{2m}\odv[order = 2]{u_{n\ell}}{r} +
+		\Biggl(\dfrac{1}{2}m\omega^{2}r^{2} + \dfrac{\ell(\ell + 1)}{2mr^{2}}\Biggr)u_{n\ell}
+		= E u_{n\ell}.
+	\end{equation*}
+
+	Muestre que al proponer una solución de la forma:
+
+	\begin{equation*}
+		u = f(r)r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}.
+	\end{equation*}
+
+	la ecuación que satisface la función \(f(r)\) es:
+
+	\begin{equation*}
+		\odv[order = 2]{f}{r} + 2 \Biggl(\dfrac{\ell + 1}{r} - \dfrac{m\omega}{\hbar}r\Biggr)
+		\odv{f}{r} + \Biggl[\dfrac{2mE}{\hbar^{2}} - (2\ell + 3)\dfrac{m\omega}{\hbar}\Biggr]f
+		= 0.
+	\end{equation*}
+\end{problema}
+\end{document}
