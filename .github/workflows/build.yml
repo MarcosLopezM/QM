@@ -100,3 +100,23 @@ jobs:
       # send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
+
+  build-problema-19:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Tareas/P19
+      tex_name: main
+      out_name: "Problema19"
+      # send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
+
+  build-problema-20:
+    uses: MarcosLopezM/latex-workflow/.github/workflows/build-pdf.yml@main
+    with:
+      relative_path: Tareas/P20
+      tex_name: main
+      out_name: "Problema20"
+      # send_it: true
+      email_to: "marcoslm@ciencias.unam.mx"
+    secrets: inherit
