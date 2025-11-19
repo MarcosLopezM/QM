@@ -24,5 +24,92 @@
 		\odv{f}{r} + \Biggl[\dfrac{2mE}{\hbar^{2}} - (2\ell + 3)\dfrac{m\omega}{\hbar}\Biggr]f
 		= 0.
 	\end{equation*}
+
+	\startsolution
+
+	Calculamos la segunda derivada de la solución propuesta:
+
+	\begin{align*}
+		\odv{u}{r}            & = f^{\prime}r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar} +
+		(\ell + 1)f r^{\ell}\mathrm{e}^{-m\omega r^{2}/2\hbar} -
+		\dfrac{m\omega}{\hbar}f r^{\ell + 2}\mathrm{e}^{-m\omega r^{2}/2\hbar},                                               \\
+		\odv[order = 2]{u}{r} & = \begin{multlined}[t]
+			                          f^{\prime\prime}r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}
+			                          + (\ell + 1)f^{\prime} r^{\ell}\mathrm{e}^{-m\omega r^{2}/2\hbar} -
+			                          \dfrac{m\omega}{\hbar}f^{\prime} r^{\ell + 2} \mathrm{e}^{-m\omega r^{2}/2\hbar} +
+			                          (\ell + 1)f^{\prime} r^{\ell}\mathrm{e}^{-m\omega r^{2}/2\hbar}\\ +
+			                          \ell(\ell + 1)f r^{\ell - 1}\mathrm{e}^{-m\omega r^{2}/2\hbar} +
+			                          \dfrac{m\omega}{\hbar}\bigl(\ell + 1\bigr)f r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}
+			                          - \dfrac{m\omega}{\hbar}f^{\prime}r^{\ell + 2}\mathrm{e}^{-m\omega r^{2}/2\hbar}\\ -
+			                          \dfrac{m\omega}{\hbar}\bigl(\ell + 2\bigr)f r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}
+			                          + \Biggl(\dfrac{m\omega}{\hbar}\Biggr)^{2} f r^{\ell + 3}\mathrm{e}^{-m\omega r^{2}/2\hbar}.
+		                          \end{multlined}
+	\end{align*}
+
+	\pagebreak
+	Simplificando,
+
+	\begin{equation*}
+		\odv[order = 2]{u}{r} = \begin{multlined}[t]
+			f^{\prime\prime}r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar} +
+			f^{\prime}\Biggl[\bigl(\ell + 1\bigr)\bigl(r^{\ell} + r^{\ell}\bigr) -
+				\dfrac{m\omega}{\hbar}\bigl(r^{\ell + 2} + r^{\ell + 2}\bigr)
+				\Biggr]\mathrm{e}^{-m\omega r^{2}/2\hbar}
+			\\
+			+ f \Biggl\lbrace \biggl(\dfrac{m\omega}{\hbar}\biggr)^{2}r^{\ell + 3} +
+			\ell \bigl(\ell + 1\bigr)r^{\ell - 1} - \Biggl[\bigl(\ell + 1\bigr)\dfrac{m\omega}{\hbar}
+				+ \bigl(\ell + 2\bigr)\dfrac{m\omega}{\hbar}\Biggr]r^{\ell + 1}\Biggr\rbrace \mathrm{e}^{-m\omega r^{2}/2\hbar}.
+		\end{multlined}
+	\end{equation*}
+
+	Dividiendo por \(r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}\),
+
+	\begin{equation}
+		\dfrac{1}{r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}}\odv[order = 2]{u}{r} =
+		f^{\prime\prime} +
+		f^{\prime}\Biggl[\dfrac{2\bigl(\ell + 1\bigr)}{r} -
+			\dfrac{2m\omega}{\hbar}r\Biggr]
+		+ f \Biggl[\biggl(\dfrac{m\omega}{\hbar}\biggr)^{2}r^{2} +
+		\dfrac{\ell \bigl(\ell + 1\bigr)}{r^{2}} -
+		\bigl(2\ell +3\bigr)\dfrac{m\omega}{\hbar}\Biggr].
+		\label{eq:second-dv-u}
+	\end{equation}
+
+	Regresando a la ecuación radia, sustituyendo la solución propuesta y dividiendo
+	por \(r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}\), así como multiplicando por
+	el inverso de \(-\tfrac{\hbar^{2}}{2m}\), i.e. \(-\tfrac{2m}{\hbar^{2}}\),
+
+	\begin{equation}
+		\dfrac{1}{r^{\ell + 1}\mathrm{e}^{-m\omega r^{2}/2\hbar}}\odv[order = 2]{u}{r} -
+		\Biggl[\Biggl(\dfrac{m\omega}{\hbar}\Biggr)^{2}r^{2} +
+		\dfrac{\ell \bigl(\ell + 1\bigr)}{r^{2}}
+		- \dfrac{2mE}{\hbar^{2}}\Biggr]f = 0.
+		\label{eq:radial-eq}
+	\end{equation}
+
+	Sustituyendo la \zcref{eq:second-dv-u} en la \zcref{eq:radial-eq},
+
+	\begin{align*}
+		f^{\prime\prime} + \Biggl[\dfrac{2(\ell + 1)}{r} - \dfrac{2m\omega}{\hbar}r\Biggr]f^{\prime} +
+		\Biggl[\biggl(\dfrac{m\omega}{\hbar}\biggr)^{2}r^{2} + \dfrac{\ell \bigl(\ell + 1\bigr)}{r^{2}} - \dfrac{m\omega}{\hbar}\bigl(2\ell + 3\bigr)\Biggr]f -
+		\Biggl[\biggl(\dfrac{m\omega}{\hbar}\biggr)^{2} +
+			\dfrac{\ell \bigl(\ell + 1\bigr)}{r^{2}} --
+			\dfrac{2mE}{\hbar^{2}}
+		\dfrac{2mE}{\hbar^{2}}\Biggr]f                                               & = 0, \\
+		\odv[order = 2]{f}{r} +
+		2 \Biggl(\dfrac{\ell + 1}{r} - \dfrac{m\omega}{\hbar}r\Biggr)\odv{f}{r} +
+		\Biggl[\biggl(\dfrac{m\omega^{2}}{\hbar}\biggr)^{2}\bigl(r^{2} - r^{2}\bigr) +
+			\ell \bigl(\ell + 1\bigr)\Bigl(\dfrac{1}{r^{2}} - \dfrac{1}{r^{2}}\Bigr) +
+		\dfrac{2mE}{\hbar^{2}} - \bigl(2\ell + 3\bigr)\dfrac{m\omega}{\hbar}\Biggr]f & = 0.
+	\end{align*}
+
+	Por lo tanto,
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\odv[order = 2]{f}{r} +
+		2 \Biggl(\dfrac{\ell + 1}{r} - \dfrac{m\omega}{\hbar}r\Biggr)\odv{f}{r} +
+		\Biggl[\dfrac{2mE}{\hbar^{2}} - \bigl(2\ell + 3\bigr)\dfrac{m\omega}{\hbar}\Biggr]f
+		= 0.
+	\end{empheq}
 \end{problema}
 \end{document}
