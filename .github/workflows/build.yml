@@ -11,6 +11,8 @@ on:
       - "Tareas/T6/**"
       - "Tareas/P14/**"
       - "Examenes/E1"
+      - "Tareas/P19/**"
+      - "Tareas/P20/**"
   workflow_dispatch:
 
 jobs:
