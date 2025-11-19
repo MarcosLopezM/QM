@@ -107,7 +107,7 @@ jobs:
       relative_path: Tareas/P19
       tex_name: main
       out_name: "Problema19"
-      # send_it: true
+      send_it: true
       email_to: "marcoslm@ciencias.unam.mx"
     secrets: inherit
 
