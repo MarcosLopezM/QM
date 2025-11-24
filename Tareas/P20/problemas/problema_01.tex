@@ -16,5 +16,76 @@
 		\dfrac{1}{m_{e}}\pdv[order=2]{}{\vect{r}_{e}} + \dfrac{1}{m_{p}}\pdv[order=2]{}{\vect{r}_{p}} =
 		\dfrac{1}{M}\pdv[order=2]{}{\vect{R}_{CM}} + \dfrac{1}{\mu}\pdv[order=2]{}{\vect{r}}.
 	\end{equation}
+
+	\startsolution
+
+	Usando la regla de la cadena para expresar \(\pdv[order = 2]{}{\vect{r}_{e}}\) y
+	\(\pdv[order = 2]{}{\vect{r}_{p}}\) en términos de \( \vect{R}_{CM}\) y \(\vect{r}\). Así,
+
+	\begin{align*}
+		\pdv{}{r_{e,i}} & = \pdv{R_{CM, j}}{r_{e,i}}\pdv{}{R_{CM, j}} +
+		\pdv{r_{j}}{r_{e,i}}\pdv{}{r_{j}},                              \\
+		\pdv{}{r_{p,i}} & = \pdv{R_{CM, j}}{r_{p,i}}\pdv{}{R_{CM, j}} +
+		\pdv{r_{j}}{r_{p,i}}\pdv{}{r_{j}},                              \\
+	\end{align*}
+
+	Por la transformación de coordenadas tenemos que
+	\(\pdv{R_{CM, j}}{r_{\lbrace e, p \rbrace, j}} = \tfrac{m_{\lbrace e, p\rbrace}}{M}\) y
+	\( \pdv{r_{j}}{r_{\lbrace e, p\rbrace, i}} = \pm 1\),
+
+	\begin{align*}
+		\pdv{}{r_{e, i}} & = \dfrac{m_{e}}{M}\pdv{}{R_{CM, i}} + \pdv{}{r_{i}}, \\
+		\pdv{}{r_{p, i}} & = \dfrac{m_{p}}{M}\pdv{}{R_{CM, i}} - \pdv{}{r_{i}}.
+	\end{align*}
+
+	\pagebreak
+	Por lo que \(\tfrac{1}{m_{e}}\pdv[order = 2]{}{r_{e, i}}\) se ve como
+
+	\begin{align}
+		\dfrac{1}{m_{e}}                                            & = \dfrac{1}{m_{e}}\Biggl(\dfrac{m_{e}}{M}\pdv{}{R_{CM, i}}\Biggr)
+		\Biggl(\dfrac{m_{e}}{M}\pdv{}{R_{CM, i}}\Biggr),\nonumber                                                                       \\
+		                                                            & = \dfrac{1}{m_{e}}\Biggl[\Biggl(\dfrac{m_{e}}{M}\Biggr)^{2}
+		\pdv[order = 2]{}{R_{CM, i}} +
+		\dfrac{m_{e}}{M}\pdv{}{R_{CM, i},r_{i}} +
+		\dfrac{m_{e}}{M}\pdv{}{R_{CM, i},r_{i}} +
+		\pdv[order = 2]{}{r_{i}}\Biggr],\nonumber                                                                                       \\
+		\Aboxedmain{\dfrac{1}{m_{e}}\pdv[order = 2]{}{\vect{r}_{e}} & = \dfrac{m_{e}}{M^{2}}
+			\pdv[order = 2]{}{\vect{R}_{CM}} + \dfrac{2}{M}\pdv{}{\vect{R}_{CM}}\cdot
+			\pdv{}{\vect{r}} +
+			\dfrac{1}{m_{e}}\pdv[order = 2]{}{\vect{r}}.}\label{eq:expr-electron}
+	\end{align}
+
+	Y, análogamente, para \(\pdv[order = 2]{}{r_{p, i}}\),
+
+	\begin{empheq}[box = \mainresult]{equation}
+		\dfrac{1}{m_{p}}\pdv[order = 2]{}{\vect{r}_{p}} =
+		\dfrac{m_{p}}{M^{2}}\pdv[order = 2]{}{\vect{R}_{CM}} -
+		\dfrac{2}{M}\pdv{}{\vect{R}_{CM}}\cdot
+		\pdv{}{\vect{r}} +
+		\dfrac{1}{m_{p}}
+		\pdv[order = 2]{}{\vect{r}}.
+		\label{eq:expr-proton}
+	\end{empheq}
+
+	Sumando las \zcref{eq:expr-electron, eq:expr-proton},
+
+	\begin{equation*}
+		\dfrac{1}{m_{e}}\pdv[order = 2]{}{\vect{r}_{e}} +
+		\dfrac{1}{m_{p}}\pdv[order = 2]{}{\vect{r}_{p}} =
+		\dfrac{m_{e} + m_{p}}{M^{2}}\pdv[order = 2]{}{\vect{R}_{CM}} +
+		2 \Biggl(\dfrac{1}{M} - \dfrac{1}{M}\Biggr)\pdv{}{\vect{R}_{CM}}\cdot
+		\pdv{}{\vect{r}}+
+		\dfrac{m_{e} + m_{p}}{m_{e}m_{p}}\pdv[order = 2]{}{\vect{r}}.
+	\end{equation*}
+
+	Recordando que \(M = m_{e} + m_{p}\) y \(\mu = \tfrac{m_{e}m_{p}}{m_{e} + m_{p}} \implies
+	\tfrac{1}{\mu} = \tfrac{m_{e} + m_{p}}{m_{e}m_{p}}\),
+
+	\begin{empheq}[box = \mainresult]{equation*}
+		\dfrac{1}{m_{e}}\pdv[order = 2]{}{\vect{r}_{e}} +
+		\dfrac{1}{m_{p}}\pdv[order = 2]{}{\vect{r}_{p}} =
+		\dfrac{1}{M}\pdv[order = 2]{}{\vect{R}_{CM}} +
+		\dfrac{1}{\mu}\pdv[order = 2]{}{\vect{r}}.
+	\end{empheq}
 \end{problema}
 \end{document}
