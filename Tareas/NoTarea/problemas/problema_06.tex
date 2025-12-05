@@ -2,20 +2,20 @@
 
 \begin{document}
 \begin{problema}
-	Considera un átomo de hidrógeno cuya función de onda es
+	Imagine que tiene un hamiltoniano de un sistema electrón-positrón, dado por
 
 	\begin{equation*}
-		\Psi \bigl(\vect{r}\bigr) = A \phi_{200}\bigl(\vect{r}\bigr) +
-		\dfrac{1}{\sqrt{5}}\phi_{311}\bigl(\vect{r}\bigr) +
-		\dfrac{1}{\sqrt{3}}\phi_{422}\bigl(\vect{r}\bigr),
+		\op{H} = \lambda \dotprod{\op{\vect{S}}{1}}{\op{\vect{S}}{2}} +
+		\Biggl(\dfrac{eB}{mc}\Biggr)\Bigl(\op{S}{1z} - \op{S}{2z}\Bigr),
 	\end{equation*}
 
-	encuentra
+	donde \(\lambda\) es un numero real y, \(\op{\vect{S}}{1}\) y \(\op{\vect{S}}{2}\), son
+	los operadores de espín para el electron y el positron, respectivamente.
 
 	\begin{itemize}
-		\item El valor de \(A\), de tal forma que el estado esté normalizado.
-		\item Si se mide la energía, que valores son posibles. ¿Con qué probabilidad?
-		\item La energía media del átomo.
+		\item Calcule el valor esperado de la energía del estado \(\ket{1, 0}\).
+		\item  Repite el inciso anterior para \(\lambda = 0\), pero \(B \neq 0\).
+		\item  Repite el primer inciso para \(\lambda \neq 0\), pero \(B = 0\).
 	\end{itemize}
 \end{problema}
 \end{document}
